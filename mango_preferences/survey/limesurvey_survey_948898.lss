@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+ <LimeSurveyDocType>Survey</LimeSurveyDocType>
+ <DBVersion>177</DBVersion>
+ <languages>
+  <language>fr</language>
+ </languages>
+ <groups>
+  <fields>
+   <fieldname>gid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>group_name</fieldname>
+   <fieldname>group_order</fieldname>
+   <fieldname>description</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>randomization_group</fieldname>
+   <fieldname>grelevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <gid><![CDATA[2074]]></gid>
+    <sid><![CDATA[948898]]></sid>
+    <group_name><![CDATA[Jeu]]></group_name>
+    <group_order><![CDATA[3]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2140]]></gid>
+    <sid><![CDATA[948898]]></sid>
+    <group_name><![CDATA[Entrainement]]></group_name>
+    <group_order><![CDATA[1]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2141]]></gid>
+    <sid><![CDATA[948898]]></sid>
+    <group_name><![CDATA[Règles du jeu]]></group_name>
+    <group_order><![CDATA[2]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2149]]></gid>
+    <sid><![CDATA[948898]]></sid>
+    <group_name><![CDATA[Introduction]]></group_name>
+    <group_order><![CDATA[0]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+  </rows>
+ </groups>
+ <questions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[7174]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[;]]></type>
+    <title><![CDATA[question03]]></title>
+    <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/plugin.js"></script>
+<div class="lightbox white preferences">
+	<div class="title">
+		<span>Pour qui voteriez-vous ?</span></div>
+	<div>
+		<div class="column left">
+			<img alt="" height="200" src="" width="200" /></div>
+		<div class="column cross">
+			<span>+</span></div>
+		<div class="column right">
+			<img alt="" height="200" src="" width="200" /></div>
+	</div>
+</div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[7688]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2140]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question01]]></title>
+    <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/training.js"></script>
+<div class="lightbox white preferences">
+	<div class="title">
+		<span>Pour qui voteriez-vous ?</span></div>
+	<div>
+		<div class="column left">
+			<img alt="" height="200" src="" width="200" />
+			<div>
+				Touche S</div>
+		</div>
+		<div class="column cross">
+			<span>+</span></div>
+		<div class="column right">
+			<img alt="" height="200" src="" width="200" />
+			<div>
+				Touche L</div>
+		</div>
+	</div>
+</div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[7689]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2141]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question02]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		// Hide next button
+		$('#movenextbtn').hide();
+		// Detect space keypress
+		$(document).keypress(
+			function(event) {
+				if(event.which == 32) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>
+<p>
+	Vous allez maintenant commencer le jeu. Le jeu durera 4 minutes. Posez vos index sur la touche S et sur la touche L. Lorsque vous êtes prêt à commencer le jeu, appuyez sur la touche "Espace".</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[7724]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2149]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question00]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		var step = 1;
+		// Hide next button
+		$('#movenextbtn').hide();
+		$(document).keypress(
+			function(event) {
+				// Detect S keypress
+				if((event.which == 115) && (step == 1)) {
+					step++;
+					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez maintenant sur la touche L.</strong></p>');
+				}
+				// Detect L keypress
+				if((event.which == 108) && (step == 2)) {
+					step++;
+					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace !</strong></p>');
+				}
+				// Detect space keypress
+				if((event.which == 32) && (step == 3)) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>
+<div id="mango_preferences_introduction">
+	<p>
+		Dans ce jeu, des visages vous seront présentés 2 par 2. A chaque fois, vous devrez indiquer pour quelle personne vous préféreriez voter dans une élection nationale.</p>
+	<p>
+		Appuyez sur la touche S pour choisir la personne de gauche et sur la touche L pour choisir la personne de droite.</p>
+	<p>
+		Vous devez répondre en moins de 2 secondes. Il n’y a pas de bonne ou de mauvaise réponse, vous devez répondre en suivant votre première impression.</p>
+	<p>
+		Posez vos index sur la touche S et sur la touche L.</p>
+	<p style="text-align: center;">
+		&nbsp;</p>
+	<p class="warningjs">
+		<strong>Appuyez maintenant sur la touche S.</strong></p>
+</div>
+<p style="text-align: center;">
+	<img src="/mango/mango_preferences/images/preferences.jpg" width="250px" /></p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+  </rows>
+ </questions>
+ <subquestions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[7973]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[1]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7974]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[usergroup]]></title>
+    <question><![CDATA[user_group]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7975]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[2]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7976]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[3]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7977]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[4]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7978]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[5]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7979]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[6]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7980]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[7]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7981]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[8]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7982]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[9]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[9]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7983]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[10]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[10]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7984]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[11]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[11]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7985]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[12]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[12]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7986]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[13]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[13]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7987]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[14]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[14]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7988]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[15]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[15]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7989]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[16]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[16]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7990]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[17]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[17]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7991]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[18]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[18]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7992]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[19]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[19]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7993]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[20]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[20]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7994]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[21]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[21]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7995]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[22]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[22]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7996]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[23]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[23]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7997]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[24]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[24]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7998]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[25]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[25]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[7999]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[26]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[26]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8000]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[27]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[27]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8001]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[28]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[28]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8002]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[29]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[29]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8003]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[30]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[30]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8004]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[31]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[31]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8005]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[32]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[32]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8006]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[33]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[33]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8007]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[34]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[34]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8008]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[35]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[35]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8009]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[36]]></title>
+    <question/>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[36]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8010]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[touch]]></title>
+    <question><![CDATA[touch]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8011]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[delayanswer]]></title>
+    <question><![CDATA[delay_answer]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8012]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[leftimage]]></title>
+    <question><![CDATA[left_image]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[8013]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[rightimage]]></title>
+    <question><![CDATA[right_image]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+  </rows>
+ </subquestions>
+ <surveys>
+  <fields>
+   <fieldname>sid</fieldname>
+   <fieldname>admin</fieldname>
+   <fieldname>expires</fieldname>
+   <fieldname>startdate</fieldname>
+   <fieldname>adminemail</fieldname>
+   <fieldname>anonymized</fieldname>
+   <fieldname>faxto</fieldname>
+   <fieldname>format</fieldname>
+   <fieldname>template</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>additional_languages</fieldname>
+   <fieldname>datestamp</fieldname>
+   <fieldname>usecookie</fieldname>
+   <fieldname>allowregister</fieldname>
+   <fieldname>allowsave</fieldname>
+   <fieldname>autonumber_start</fieldname>
+   <fieldname>autoredirect</fieldname>
+   <fieldname>allowprev</fieldname>
+   <fieldname>printanswers</fieldname>
+   <fieldname>ipaddr</fieldname>
+   <fieldname>refurl</fieldname>
+   <fieldname>publicstatistics</fieldname>
+   <fieldname>publicgraphs</fieldname>
+   <fieldname>listpublic</fieldname>
+   <fieldname>htmlemail</fieldname>
+   <fieldname>tokenanswerspersistence</fieldname>
+   <fieldname>assessments</fieldname>
+   <fieldname>usecaptcha</fieldname>
+   <fieldname>usetokens</fieldname>
+   <fieldname>bounce_email</fieldname>
+   <fieldname>attributedescriptions</fieldname>
+   <fieldname>emailresponseto</fieldname>
+   <fieldname>tokenlength</fieldname>
+   <fieldname>savetimings</fieldname>
+   <fieldname>showxquestions</fieldname>
+   <fieldname>showgroupinfo</fieldname>
+   <fieldname>shownoanswer</fieldname>
+   <fieldname>showqnumcode</fieldname>
+   <fieldname>bouncetime</fieldname>
+   <fieldname>bounceprocessing</fieldname>
+   <fieldname>bounceaccounttype</fieldname>
+   <fieldname>bounceaccounthost</fieldname>
+   <fieldname>bounceaccountpass</fieldname>
+   <fieldname>bounceaccountencryption</fieldname>
+   <fieldname>bounceaccountuser</fieldname>
+   <fieldname>showwelcome</fieldname>
+   <fieldname>showprogress</fieldname>
+   <fieldname>navigationdelay</fieldname>
+   <fieldname>nokeyboard</fieldname>
+   <fieldname>alloweditaftercompletion</fieldname>
+   <fieldname>emailnotificationto</fieldname>
+   <fieldname>googleanalyticsstyle</fieldname>
+   <fieldname>googleanalyticsapikey</fieldname>
+   <fieldname>sendconfirmation</fieldname>
+   <fieldname>questionindex</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <sid><![CDATA[948898]]></sid>
+    <admin><![CDATA[Anne L'Hôte]]></admin>
+    <adminemail><![CDATA[anne.lhote@sciencespo.fr]]></adminemail>
+    <anonymized><![CDATA[N]]></anonymized>
+    <faxto/>
+    <format><![CDATA[G]]></format>
+    <template><![CDATA[mango]]></template>
+    <language><![CDATA[fr]]></language>
+    <additional_languages/>
+    <datestamp><![CDATA[Y]]></datestamp>
+    <usecookie><![CDATA[N]]></usecookie>
+    <allowregister><![CDATA[N]]></allowregister>
+    <allowsave><![CDATA[N]]></allowsave>
+    <autonumber_start><![CDATA[29]]></autonumber_start>
+    <autoredirect><![CDATA[Y]]></autoredirect>
+    <allowprev><![CDATA[N]]></allowprev>
+    <printanswers><![CDATA[N]]></printanswers>
+    <ipaddr><![CDATA[N]]></ipaddr>
+    <refurl><![CDATA[Y]]></refurl>
+    <publicstatistics><![CDATA[N]]></publicstatistics>
+    <publicgraphs><![CDATA[N]]></publicgraphs>
+    <listpublic><![CDATA[N]]></listpublic>
+    <htmlemail><![CDATA[Y]]></htmlemail>
+    <tokenanswerspersistence><![CDATA[N]]></tokenanswerspersistence>
+    <assessments><![CDATA[N]]></assessments>
+    <usecaptcha><![CDATA[D]]></usecaptcha>
+    <usetokens><![CDATA[N]]></usetokens>
+    <bounce_email><![CDATA[anne.lhote@sciencespo.fr]]></bounce_email>
+    <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
+    <emailresponseto/>
+    <tokenlength><![CDATA[15]]></tokenlength>
+    <savetimings><![CDATA[Y]]></savetimings>
+    <showxquestions><![CDATA[N]]></showxquestions>
+    <showgroupinfo><![CDATA[B]]></showgroupinfo>
+    <shownoanswer><![CDATA[Y]]></shownoanswer>
+    <showqnumcode><![CDATA[X]]></showqnumcode>
+    <bounceprocessing><![CDATA[N]]></bounceprocessing>
+    <showwelcome><![CDATA[N]]></showwelcome>
+    <showprogress><![CDATA[Y]]></showprogress>
+    <navigationdelay><![CDATA[0]]></navigationdelay>
+    <nokeyboard><![CDATA[N]]></nokeyboard>
+    <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
+    <emailnotificationto/>
+    <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
+    <googleanalyticsapikey/>
+    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <questionindex><![CDATA[0]]></questionindex>
+   </row>
+  </rows>
+ </surveys>
+ <surveys_languagesettings>
+  <fields>
+   <fieldname>surveyls_survey_id</fieldname>
+   <fieldname>surveyls_language</fieldname>
+   <fieldname>surveyls_title</fieldname>
+   <fieldname>surveyls_description</fieldname>
+   <fieldname>surveyls_welcometext</fieldname>
+   <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_url</fieldname>
+   <fieldname>surveyls_urldescription</fieldname>
+   <fieldname>surveyls_email_invite_subj</fieldname>
+   <fieldname>surveyls_email_invite</fieldname>
+   <fieldname>surveyls_email_remind_subj</fieldname>
+   <fieldname>surveyls_email_remind</fieldname>
+   <fieldname>surveyls_email_register_subj</fieldname>
+   <fieldname>surveyls_email_register</fieldname>
+   <fieldname>surveyls_email_confirm_subj</fieldname>
+   <fieldname>surveyls_email_confirm</fieldname>
+   <fieldname>surveyls_dateformat</fieldname>
+   <fieldname>email_admin_notification_subj</fieldname>
+   <fieldname>email_admin_responses_subj</fieldname>
+   <fieldname>email_admin_notification</fieldname>
+   <fieldname>email_admin_responses</fieldname>
+   <fieldname>surveyls_numberformat</fieldname>
+   <fieldname>surveyls_attributecaptions</fieldname>
+   <fieldname>attachments</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <surveyls_survey_id><![CDATA[948898]]></surveyls_survey_id>
+    <surveyls_language><![CDATA[fr]]></surveyls_language>
+    <surveyls_title><![CDATA[Coop - Jeu Preferences]]></surveyls_title>
+    <surveyls_description/>
+    <surveyls_welcometext/>
+    <surveyls_endtext/>
+    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_urldescription/>
+    <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
+    <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+you have been invited to participate in a survey.<br />
+<br />
+The survey is titled:<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+To participate, please click on the link below.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Click here to do the survey:<br />
+{SURVEYURL}<br />
+<br />
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:<br />
+{OPTOUTURL}<br />
+<br />
+If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />
+{OPTINURL}]]></surveyls_email_invite>
+    <surveyls_email_remind_subj><![CDATA[Reminder to participate in a survey]]></surveyls_email_remind_subj>
+    <surveyls_email_remind><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+Recently we invited you to participate in a survey.<br />
+<br />
+We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />
+<br />
+The survey is titled:<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+To participate, please click on the link below.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Click here to do the survey:<br />
+{SURVEYURL}<br />
+<br />
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:<br />
+{OPTOUTURL}]]></surveyls_email_remind>
+    <surveyls_email_register_subj><![CDATA[Survey registration confirmation]]></surveyls_email_register_subj>
+    <surveyls_email_register><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />
+<br />
+To complete this survey, click on the following URL:<br />
+<br />
+{SURVEYURL}<br />
+<br />
+If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.]]></surveyls_email_register>
+    <surveyls_email_confirm_subj><![CDATA[Confirmation of your participation in our survey]]></surveyls_email_confirm_subj>
+    <surveyls_email_confirm><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />
+<br />
+If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_dateformat><![CDATA[9]]></surveyls_dateformat>
+    <email_admin_notification_subj><![CDATA[Response submission for survey {SURVEYNAME}]]></email_admin_notification_subj>
+    <email_admin_responses_subj><![CDATA[Response submission for survey {SURVEYNAME} with results]]></email_admin_responses_subj>
+    <email_admin_notification><![CDATA[Hello,<br />
+<br />
+A new response was submitted for your survey '{SURVEYNAME}'.<br />
+<br />
+Click the following link to reload the survey:<br />
+{RELOADURL}<br />
+<br />
+Click the following link to see the individual response:<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Click the following link to edit the individual response:<br />
+{EDITRESPONSEURL}<br />
+<br />
+View statistics by clicking here:<br />
+{STATISTICSURL}]]></email_admin_notification>
+    <email_admin_responses><![CDATA[Hello,<br />
+<br />
+A new response was submitted for your survey '{SURVEYNAME}'.<br />
+<br />
+Click the following link to reload the survey:<br />
+{RELOADURL}<br />
+<br />
+Click the following link to see the individual response:<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Click the following link to edit the individual response:<br />
+{EDITRESPONSEURL}<br />
+<br />
+View statistics by clicking here:<br />
+{STATISTICSURL}<br />
+<br />
+<br />
+The following answers were given by the participant:<br />
+{ANSWERTABLE}]]></email_admin_responses>
+    <surveyls_numberformat><![CDATA[0]]></surveyls_numberformat>
+   </row>
+  </rows>
+ </surveys_languagesettings>
+</document>
