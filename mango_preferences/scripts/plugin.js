@@ -125,6 +125,7 @@ function onKeyPress(e) {
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touch > input[type="text"]').val('l');
 				break;
 		}
+		$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00correct > input[type="text"]').val(isAnswerCorrect(e.data.step));
 		saveAnswer(e.data.step);
 	}
 }
@@ -139,6 +140,32 @@ function saveAnswer(i) {
 		// Loop over the next iteration
 		step01(++i);
 	}
+}
+
+/* *
+ * A response is correct if the choice of the participant matches with the image
+ * */
+function isAnswerCorrect(i) {
+	iReturn = -1;
+	/*
+	var answer = $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00answer > input[type="text"]').val();
+	if(aImages[i].indexOf('_A') != -1) {
+		if(answer == 'anger') {
+			iReturn = 1;
+			iScore++;
+		} else {
+			iReturn = 0;
+		}
+	} else if(aImages[i].indexOf('_F') != -1) {
+		if(answer == 'fear') {
+			iReturn = 1;
+			iScore++;
+		} else {
+			iReturn = 0;
+		}
+	}
+	*/
+	return iReturn;
 }
 
 function exit() {
@@ -205,6 +232,8 @@ $(document).ready(function() {
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00leftimage > input[type="text"]').removeClass('empty');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00rightimage > input[type="text"]').val('-1');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00rightimage > input[type="text"]').removeClass('empty');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').val('-1');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').removeClass('empty');
 	// Get current user token
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// If the user token is odd
