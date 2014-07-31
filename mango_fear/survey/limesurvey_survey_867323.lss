@@ -2739,7 +2739,7 @@ $(document).ready(
     <surveyls_description/>
     <surveyls_welcometext/>
     <surveyls_endtext><![CDATA[&nbsp;Merci d'avoir participé. Ce survey est maintenant terminé.]]></surveyls_endtext>
-    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
     <surveyls_urldescription/>
     <surveyls_email_invite_subj><![CDATA[Invitation à participer à un questionnaire]]></surveyls_email_invite_subj>
     <surveyls_email_invite><![CDATA[Cher(e) {FIRSTNAME},<br /><br />Vous avez été invité à participer à un questionnaire.<br /><br />Celui-ci est intitulé :<br />"{SURVEYNAME}"<br /><br />"{SURVEYDESCRIPTION}"<br /><br />Pour participer, veuillez cliquer sur le lien ci-dessous.<br /><br />Cordialement,<br /><br />{ADMINNAME} ({ADMINEMAIL})<br /><br />----------------------------------------------<br />Cliquez ici pour remplir ce questionnaire :<br />{SURVEYURL}]]></surveyls_email_invite>

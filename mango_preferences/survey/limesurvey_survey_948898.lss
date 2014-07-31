@@ -840,6 +840,20 @@ $(document).ready(
     <scale_id><![CDATA[1]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
    </row>
+   <row>
+    <qid><![CDATA[8062]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2074]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[correct]]></title>
+    <question><![CDATA[correct]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[7174]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
   </rows>
  </subquestions>
  <surveys>
@@ -915,7 +929,7 @@ $(document).ready(
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[N]]></allowsave>
-    <autonumber_start><![CDATA[29]]></autonumber_start>
+    <autonumber_start><![CDATA[32]]></autonumber_start>
     <autoredirect><![CDATA[Y]]></autoredirect>
     <allowprev><![CDATA[N]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
@@ -987,7 +1001,7 @@ $(document).ready(
     <surveyls_description/>
     <surveyls_welcometext/>
     <surveyls_endtext/>
-    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
     <surveyls_urldescription/>
     <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
     <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},<br />
