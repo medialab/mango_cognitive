@@ -19,12 +19,6 @@ var iScore			= 0;
 var iSteps			= 4;
 var sToken			= -1;
 
-function preloadImages(aImages) {
-	var imageObj = new Image();
-	$.each(aImages, function(index) {
-		imageObj.src = sImagesPath + aImages[index];
-	});
-}
 
 function onKeyPress(e) {
 	if(aKeys.indexOf(e.which) != -1) {
@@ -115,12 +109,12 @@ function saveAnswer() {
 				function(event) {
 					// Detect space keypress
 					if(event.which == 32) {
-						step01();
+						step02();
 					}
 				}
 			);
 		} else {
-			step01();
+			step02();
 		}
 	}
 }
@@ -131,48 +125,8 @@ function exit() {
 	$('#movesubmitbtn').click();
 }
 
+// Preload images before launch the game
 function step01() {
-	iCounter++;
-	$(document).unbind('keypress');
-	$('.fear .message').html('').hide();
-	oResponse			= new Object();
-	oResponse.token		= sToken;
-	// Generate a random value between 500 and 750
-	var iWait = Math.floor(Math.random() * 250 + iWait01);
-	// Got to next step
-	setTimeout(function() {step02()}, iWait);
-}
-
-function step02() {
-	// Display the fixing cross
-	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
-	// Generate a random value between 1000 and 1250
-	var iWait = Math.floor(Math.random() * 250 + iWait02);
-	// Got to next step
-	setTimeout(function() {step03()}, iWait);
-}
-
-function step03() {
-	// Get random element from an array
-	aImage = aImages.splice(parseInt(Math.random() * aImages.length), 1);
-	oResponse.filename = aImage[0];
-	// Display the fear image
-	$('.lightbox img').attr('src', sImagesPath + aImage[0]);
-	// Got to next step
-	iTimeout = setTimeout(function() {step04()}, iWait03);
-	// Start listening on user interactions
-	$(document).bind('keypress', onKeyPress);
-}
-
-function step04() {
-	// Display the white mask
-	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
-	iTimeout = setTimeout(function() {saveAnswer()}, iWait04);
-}
-
-$(document).ready(function() {
-	// Preload all the images into cache
-	preloadImages(aImages);
 	// Get current user token
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// If the user token is odd
@@ -183,6 +137,8 @@ $(document).ready(function() {
 		sScoreMessage = '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L<br/><br/>';
 	}
 	sScoreMessage += 'Appuyez sur espace pour continuer.';
+	// Hide image
+	$('.fear img').attr('src', '');
 	// Display this sScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
 	$(document).keypress(
@@ -190,8 +146,78 @@ $(document).ready(function() {
 			// Detect space keypress
 			if(event.which == 32) {
 				// Start training
-				step01(0);
+				step02(0);
 			}
 		}
 	);
+}
+
+function step02() {
+	iCounter++;
+	$(document).unbind('keypress');
+	$('.fear .message').html('').hide();
+	oResponse			= new Object();
+	oResponse.token		= sToken;
+	// Generate a random value between 500 and 750
+	var iWait = Math.floor(Math.random() * 250 + iWait01);
+	// Got to next step
+	setTimeout(function() {step03()}, iWait);
+}
+
+function step03() {
+	// Display the fixing cross
+	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
+	// Generate a random value between 1000 and 1250
+	var iWait = Math.floor(Math.random() * 250 + iWait02);
+	// Got to next step
+	setTimeout(function() {step04()}, iWait);
+}
+
+function step04() {
+	// Get random element from an array
+	aImage = aImages.splice(parseInt(Math.random() * aImages.length), 1);
+	oResponse.filename = aImage[0];
+	// Display the fear image
+	$('.lightbox img').attr('src', sImagesPath + aImage[0]);
+	// Got to next step
+	iTimeout = setTimeout(function() {step05()}, iWait03);
+	// Start listening on user interactions
+	$(document).bind('keypress', onKeyPress);
+}
+
+function step05() {
+	// Display the white mask
+	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
+	iTimeout = setTimeout(function() {saveAnswer()}, iWait04);
+}
+
+$(document).ready(function() {
+	// Display the spinner
+	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+	// Display this sScoreMessage
+	sScoreMessage = 'Chargement des images du jeu. Veuillez patienter.';
+	$('.fear .message').html(sScoreMessage).show();
+	// Preload all the images into cache
+	var imageObj 	= new Image();
+	var length 		= aImages.length - 1;
+	/*
+	$.each(aImages, function(index) {
+		imageObj.src = sImagesPath + aImages[index];
+		if(index == length) {
+			step01();
+		}
+	});
+	*/
+	$.each(aImages, function(index) {
+		(function(index) {
+			$.ajax({
+				url: sImagesPath + aImages[index],
+			}).done(function() {
+				// If images loading finished, launch the game
+				if(index == length) {
+					step01();
+				}
+			});
+		}(index));
+	});
 });

@@ -20,12 +20,6 @@ var iScore		= 0;
 var iSteps		= 60;
 var sToken		= -1;
 
-function preloadImages() {
-	var imageObj = new Image();
-	$.each(aImages, function(index) {
-		imageObj.src = sImagesPath + aImages[index];
-	});
-}
 
 function onKeyPress(e) {
 	iStopTimestamp = new Date().getTime();
@@ -103,9 +97,9 @@ function saveAnswer(i) {
 		i++;
 		if(i % iSteps == 0) {
 			displayScoreMessage(1);
-			setTimeout(function() {step01(i)}, iWait05);
+			setTimeout(function() {step02(i)}, iWait05);
 		} else {
-			step01(i);
+			step02(i);
 		}
 	}
 }
@@ -143,43 +137,66 @@ function displayScoreMessage(middle) {
 	iScore = 0;
 }
 
-function step01(i) {
+function step01() {
+	// Display image
+	$('.lightbox img').attr('src', '').show();
+	// Get current user token
+	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
+	// If the user token is odd
+	if(sToken % 2) {
+		sScoreMessage = '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L';
+	// If the user token is even
+	} else {
+		sScoreMessage = '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L';
+	}
+	// Display the ScoreMessage
+	$('.fear .message').html(sScoreMessage).show();
+	// Start game
+	setTimeout(function() { step02(0); }, iWait06);
+}
+
+function step02(i) {
 	$(document).unbind('keypress');
 	// Hide the ScoreMessage
 	$('.fear .message').html('').hide();
 	// Generate a random value between 500 and 750
 	var iWait = Math.floor(Math.random() * 250 + iWait01);
 	// Got to next step
-	setTimeout(function() {step02(i)}, iWait);
+	setTimeout(function() {step03(i)}, iWait);
 }
 
-function step02(i) {
+function step03(i) {
 	// Display the fixing cross
 	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
-	setTimeout(function() {step03(i)}, iWait);
+	setTimeout(function() {step04(i)}, iWait);
 }
 
-function step03(i) {
+function step04(i) {
 	// Display the fear image
 	$('.lightbox img').attr('src', sImagesPath + aImages[i]);
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00filename > input[type="text"]').val(aImages[i]);
 	// Got to next step
-	iTimeout = setTimeout(function() {step04(i)}, iWait03);
+	iTimeout = setTimeout(function() {step05(i)}, iWait03);
 	iStartTimestamp = new Date().getTime();
 	// Start listening on user interactions
 	$(document).bind('keypress', {step : i}, onKeyPress);
 }
 
-function step04(i) {
+function step05(i) {
 	// Display the white mask
 	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
 	iTimeout = setTimeout(function() {saveAnswer(i)}, iWait04);
 }
 
 $(document).ready(function() {
+	// Display the spinner
+	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+	// Display this sScoreMessage
+	sScoreMessage = 'Chargement des images du jeu. Veuillez patienter.';
+	$('.fear .message').html(sScoreMessage).show();
 	// Set default values
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val('-1');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').removeClass('empty');
@@ -206,22 +223,23 @@ $(document).ready(function() {
 			var oResult = JSON.parse(data);
 			// Set user group for all input
 			$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val(oResult.user_group);
-			// Preload all the images into cache
-			aImages = oResult.images;
-			preloadImages();
+			// Preload all the images into cache before launching the game
+			aImages			= oResult.images;
+			var imageObj	= new Image();
+			var length 		= aImages.length - 1;
+			var tmp 		= 0;
+			$.each(aImages, function(index) {
+				(function(index) {
+					$.ajax({
+						url: sImagesPath + aImages[index],
+					}).done(function() {
+						// If images loading finished, launch the game
+						if(index == length) {
+							step01();
+						}
+					});
+				}(index));
+			});
 		}
 	});
-	// Get current user token
-	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
-	// If the user token is odd
-	if(sToken % 2) {
-		sScoreMessage = '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L';
-	// If the user token is even
-	} else {
-		sScoreMessage = '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L';
-	}
-	// Display the ScoreMessage
-	$('.fear .message').html(sScoreMessage).show();
-	// Start game
-	setTimeout(function() { step01(0); }, iWait06);
 });
