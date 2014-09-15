@@ -168,6 +168,11 @@ function step02(i) {
 function step03(i) {
 	// Display the fixing cross
 	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
+	// Vertical center images
+	if($('.lightbox img').css('margin-top') == '0px') {
+		var tmp = ($('.lightbox').height() - $('.lightbox .message').height() - $('.lightbox .message').css('margin-top').replace('px', '') - 406) / 2;
+		$('.lightbox img').css('margin-top', tmp + 'px');
+	}
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -195,7 +200,7 @@ $(document).ready(function() {
 	// Display the spinner
 	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
 	// Display this sScoreMessage
-	sScoreMessage = 'Chargement des images du jeu. Veuillez patienter.';
+	sScoreMessage = 'Chargement des images du jeu. Veuillez patienter.<br/><br/>';
 	$('.fear .message').html(sScoreMessage).show();
 	// Set default values
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val('-1');
