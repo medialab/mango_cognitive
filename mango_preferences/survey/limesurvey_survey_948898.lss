@@ -89,13 +89,13 @@
 <div class="lightbox white preferences">
 	<div class="title">
 		<span>Pour qui voteriez-vous ?</span></div>
-	<div>
+	<div class="images">
 		<div class="column left">
-			<img alt="" height="200" src="" width="200" /></div>
+			<img alt="" height="250" src="" width="250" /></div>
 		<div class="column cross">
 			<span>+</span></div>
 		<div class="column right">
-			<img alt="" height="200" src="" width="200" /></div>
+			<img alt="" height="250" src="" width="250" /></div>
 	</div>
 </div>
 ]]></question>
@@ -120,16 +120,16 @@
 <div class="lightbox white preferences">
 	<div class="title">
 		<span>Pour qui voteriez-vous ?</span></div>
-	<div>
+	<div class="images">
 		<div class="column left">
-			<img alt="" height="200" src="" width="200" />
+			<img alt="" height="250" src="" width="250" />
 			<div>
 				Touche S</div>
 		</div>
 		<div class="column cross">
 			<span>+</span></div>
 		<div class="column right">
-			<img alt="" height="200" src="" width="200" />
+			<img alt="" height="250" src="" width="250" />
 			<div>
 				Touche L</div>
 		</div>
