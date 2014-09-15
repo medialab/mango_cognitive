@@ -9,7 +9,7 @@ var iWait02		= 1000;
 var iWait03		= 250;
 var iWait04		= 1750;
 var iWait05		= 15000;
-var iWait06		= 20000;
+var iWait06		= 5000;
 
 // Set path to fear images
 var sPluginPath	= 'mango/mango_fear/';
