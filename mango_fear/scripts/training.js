@@ -109,12 +109,12 @@ function saveAnswer() {
 				function(event) {
 					// Detect space keypress
 					if(event.which == 32) {
-						step02();
+						step_02();
 					}
 				}
 			);
 		} else {
-			step02();
+			step_02();
 		}
 	}
 }
@@ -125,7 +125,7 @@ function exit() {
 	$('#movesubmitbtn').click();
 }
 
-function step01() {
+function step_01() {
 	// Get current user token
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// If the user token is odd
@@ -145,13 +145,13 @@ function step01() {
 			// Detect space keypress
 			if(event.which == 32) {
 				// Start training
-				step02();
+				step_02();
 			}
 		}
 	);
 }
 
-function step02() {
+function step_02() {
 	iCounter++;
 	$(document).unbind('keypress');
 	$('.fear .message .next').html('').hide();
@@ -160,42 +160,43 @@ function step02() {
 	// Generate a random value between 500 and 750
 	var iWait = Math.floor(Math.random() * 250 + iWait01);
 	// Got to next step
-	setTimeout(function() {step03()}, iWait);
+	setTimeout(function() {step_03()}, iWait);
 }
 
-function step03() {
+function step_03() {
 	// Display the fixing cross
 	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
-	// Vertical center images
-	if($('.lightbox img').css('margin-top') == '0px') {
-		var tmp = ($('.lightbox').height() - $('.lightbox .message').height() - $('.lightbox .message').css('margin-top').replace('px', '') - 406) / 2;
-		$('.lightbox img').css('margin-top', tmp + 'px');
-	}
 	// Got to next step
-	setTimeout(function() {step04()}, iWait);
+	setTimeout(function() {step_04()}, iWait);
 }
 
-function step04() {
+function step_04() {
 	// Get random element from an array
 	aImage = aImages.splice(parseInt(Math.random() * aImages.length), 1);
 	oResponse.filename = aImage[0];
 	// Display the fear image
 	$('.lightbox img').attr('src', sImagesPath + aImage[0]);
 	// Got to next step
-	iTimeout = setTimeout(function() {step05()}, iWait03);
+	iTimeout = setTimeout(function() {step_05()}, iWait03);
 	// Start listening on user interactions
 	$(document).bind('keypress', onKeyPress);
 }
 
-function step05() {
+function step_05() {
 	// Display the white mask
 	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
 	iTimeout = setTimeout(function() {saveAnswer()}, iWait04);
 }
 
 $(document).ready(function() {
+	// Vertical center images
+	if($('.lightbox img').css('margin-top') == '0px') {
+		// var tmp = ($('.lightbox').height() - $('.lightbox .message').height() - $('.lightbox .message').css('margin-top').replace('px', '') - 406) / 2;
+		var tmp = ($('.lightbox').height() - 406) / 2;
+		$('.lightbox img').css('top', tmp + 'px');
+	}
 	// Display the spinner
 	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
 	// Display this sScoreMessage
@@ -210,7 +211,7 @@ $(document).ready(function() {
 			}).done(function() {
 				// If images loading finished, launch the game
 				if(index == length) {
-					step01();
+					step_01();
 				}
 			});
 		}(index));

@@ -162,9 +162,9 @@ $(document).ready(
 	<p>
 		Dans cette expérience, des visages vont vous être présentés. Ces visages expriment soit de la colère soit de la peur. Vous devrez décider si le visage présenté exprime de la colère ou de la peur. C'est parfois difficile mais vous devez répondre même si vous n'êtes pas sûr(e) de vous.</p>
 	<p>
-		Vous commencerez par un petit entrainement. Vous avez deux secondes pour répondre. Vos scores vous seront donnés régulièrement.</p>
+		Vous commencerez par un petit entraînement.<strong> Vous avez 2 secondes pour répondre.</strong> Vos scores vous seront donnés régulièrement.</p>
 	<p>
-		Posez vos index sur la touche S et sur la touche L.</p>
+		Pendant toute la durée du jeu, <strong>fixez bien le point </strong>qui apparaît au centre de l'écran avant chaque visage et gardez vos index sur la touche S et sur la touche L.</p>
 	<p class="warningjs">
 		<strong>Appuyez maintenant sur la touche S.</strong></p>
 </div>

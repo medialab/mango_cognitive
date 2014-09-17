@@ -97,9 +97,9 @@ function saveAnswer(i) {
 		i++;
 		if(i % iSteps == 0) {
 			displayScoreMessage(1);
-			setTimeout(function() {step02(i)}, iWait05);
+			setTimeout(function() {step_02(i)}, iWait05);
 		} else {
-			step02(i);
+			step_02(i);
 		}
 	}
 }
@@ -137,7 +137,7 @@ function displayScoreMessage(middle) {
 	iScore = 0;
 }
 
-function step01() {
+function step_01() {
 	// Display image
 	$('.lightbox img').attr('src', '').show();
 	// Get current user token
@@ -152,20 +152,20 @@ function step01() {
 	// Display the ScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
 	// Start game
-	setTimeout(function() { step02(0); }, iWait06);
+	setTimeout(function() { step_02(0); }, iWait06);
 }
 
-function step02(i) {
+function step_02(i) {
 	$(document).unbind('keypress');
 	// Hide the ScoreMessage
 	$('.fear .message').html('').hide();
 	// Generate a random value between 500 and 750
 	var iWait = Math.floor(Math.random() * 250 + iWait01);
 	// Got to next step
-	setTimeout(function() {step03(i)}, iWait);
+	setTimeout(function() {step_03(i)}, iWait);
 }
 
-function step03(i) {
+function step_03(i) {
 	// Display the fixing cross
 	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
 	// Vertical center images
@@ -176,21 +176,21 @@ function step03(i) {
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
-	setTimeout(function() {step04(i)}, iWait);
+	setTimeout(function() {step_04(i)}, iWait);
 }
 
-function step04(i) {
+function step_04(i) {
 	// Display the fear image
 	$('.lightbox img').attr('src', sImagesPath + aImages[i]);
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00filename > input[type="text"]').val(aImages[i]);
 	// Got to next step
-	iTimeout = setTimeout(function() {step05(i)}, iWait03);
+	iTimeout = setTimeout(function() {step_05(i)}, iWait03);
 	iStartTimestamp = new Date().getTime();
 	// Start listening on user interactions
 	$(document).bind('keypress', {step : i}, onKeyPress);
 }
 
-function step05(i) {
+function step_05(i) {
 	// Display the white mask
 	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
 	iTimeout = setTimeout(function() {saveAnswer(i)}, iWait04);
@@ -240,7 +240,7 @@ $(document).ready(function() {
 					}).done(function() {
 						// If images loading finished, launch the game
 						if(index == length) {
-							step01();
+							step_01();
 						}
 					});
 				}(index));
