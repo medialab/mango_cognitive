@@ -87,6 +87,7 @@
     <title><![CDATA[question03]]></title>
     <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/plugin.js"></script>
 <div class="lightbox white preferences">
+    <div class="content">
 	<div class="title">
 		<span>Pour qui voteriez-vous ?</span></div>
 	<div class="images">
@@ -97,6 +98,7 @@
 		<div class="column right">
 			<img alt="" height="250" src="" width="250" /></div>
 	</div>
+    </div>
 </div>
 ]]></question>
     <preg/>
@@ -118,22 +120,25 @@
     <title><![CDATA[question01]]></title>
     <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/training.js"></script>
 <div class="lightbox white preferences">
+    <div class="content">
 	<div class="title">
-		<span>Pour qui voteriez-vous ?</span></div>
+		<span>Pour qui voteriez-vous ?</span>
+	</div>
 	<div class="images">
 		<div class="column left">
 			<img alt="" height="250" src="" width="250" />
-			<div>
+			<div class="instructions">
 				Touche S</div>
 		</div>
 		<div class="column cross">
 			<span>+</span></div>
 		<div class="column right">
 			<img alt="" height="250" src="" width="250" />
-			<div>
+			<div class="instructions">
 				Touche L</div>
 		</div>
 	</div>
+    </div>
 </div>
 ]]></question>
     <preg/>
@@ -205,7 +210,7 @@ $(document).ready(
 				// Detect L keypress
 				if((event.which == 108) && (step == 2)) {
 					step++;
-					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace !</strong></p>');
+					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace pour commencer l entraînement !</strong></p>');
 				}
 				// Detect space keypress
 				if((event.which == 32) && (step == 3)) {
@@ -222,7 +227,9 @@ $(document).ready(
 	<p>
 		Appuyez sur la touche S pour choisir la personne de gauche et sur la touche L pour choisir la personne de droite.</p>
 	<p>
-		Vous devez répondre en moins de 2 secondes. Il n’y a pas de bonne ou de mauvaise réponse, vous devez répondre en suivant votre première impression.</p>
+		Vous devez répondre <strong>en moins de 2 secondes</strong>. Si vous ne répondez pas assez vite, l'ordinateur passera automatiquement aux visages suivants.</p>
+	<p>
+		Il n’y a pas de bonne ou de mauvaise réponse, vous devez répondre en suivant votre première impression.</p>
 	<p>
 		Posez vos index sur la touche S et sur la touche L.</p>
 	<p style="text-align: center;">
