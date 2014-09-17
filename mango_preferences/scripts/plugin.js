@@ -223,8 +223,8 @@ function step03(i) {
 $(document).ready(function() {
 	// Vertical center images
 	if($('.lightbox img').css('margin-top') == '0px') {
-		var tmp = ($('.lightbox').height() + parseInt($('.lightbox').css('padding-top').replace('px', '')) - $('.lightbox .title').height() - 265) / 2;
-		$('.lightbox .images').css('margin-top', tmp + 'px');
+		var tmp = ($('.lightbox').height() - $('.lightbox .content').height()) / 2;
+		$('.lightbox .content').css('margin-top', tmp + 'px');
 	}
 	// Set default values
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val('-1');
