@@ -87,18 +87,18 @@
     <title><![CDATA[question03]]></title>
     <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/plugin.js"></script>
 <div class="lightbox white preferences">
-    <div class="content">
-	<div class="title">
-		<span>Pour qui voteriez-vous ?</span></div>
-	<div class="images">
-		<div class="column left">
-			<img alt="" height="250" src="" width="250" /></div>
-		<div class="column cross">
-			<span>+</span></div>
-		<div class="column right">
-			<img alt="" height="250" src="" width="250" /></div>
+	<div class="content">
+		<div class="title">
+			<span>Pour qui voteriez-vous ?</span></div>
+		<div class="images screencentered">
+			<div class="column left">
+				<img alt="" height="250" src="" width="250" /></div>
+			<div class="column cross">
+				<span>+</span></div>
+			<div class="column right">
+				<img alt="" height="250" src="" width="250" /></div>
+		</div>
 	</div>
-    </div>
 </div>
 ]]></question>
     <preg/>
@@ -120,25 +120,24 @@
     <title><![CDATA[question01]]></title>
     <question><![CDATA[<script type="text/javascript" src="mango/mango_preferences/scripts/training.js"></script>
 <div class="lightbox white preferences">
-    <div class="content">
-	<div class="title">
-		<span>Pour qui voteriez-vous ?</span>
-	</div>
-	<div class="images">
-		<div class="column left">
-			<img alt="" height="250" src="" width="250" />
-			<div class="instructions">
-				Touche S</div>
+	<div class="content">
+		<div class="title">
+			<span>Pour qui voteriez-vous ?</span></div>
+		<div class="images screencentered">
+			<div class="column left">
+				<img alt="" height="250" src="" width="250" />
+				<div class="instructions">
+					Touche S</div>
+			</div>
+			<div class="column cross">
+				<span>+</span></div>
+			<div class="column right">
+				<img alt="" height="250" src="" width="250" />
+				<div class="instructions">
+					Touche L</div>
+			</div>
 		</div>
-		<div class="column cross">
-			<span>+</span></div>
-		<div class="column right">
-			<img alt="" height="250" src="" width="250" />
-			<div class="instructions">
-				Touche L</div>
-		</div>
 	</div>
-    </div>
 </div>
 ]]></question>
     <preg/>
@@ -210,7 +209,7 @@ $(document).ready(
 				// Detect L keypress
 				if((event.which == 108) && (step == 2)) {
 					step++;
-					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace pour commencer l entraînement !</strong></p>');
+					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace pour commencer l\'entraînement !</strong></p>');
 				}
 				// Detect space keypress
 				if((event.which == 32) && (step == 3)) {
@@ -925,7 +924,7 @@ $(document).ready(
    <row>
     <sid><![CDATA[948898]]></sid>
     <admin><![CDATA[Anne L'Hôte]]></admin>
-    <adminemail><![CDATA[anne.lhote@sciencespo.fr]]></adminemail>
+    <adminemail><![CDATA[anne.lhote@gmail.com]]></adminemail>
     <anonymized><![CDATA[N]]></anonymized>
     <faxto/>
     <format><![CDATA[G]]></format>
@@ -950,7 +949,7 @@ $(document).ready(
     <assessments><![CDATA[N]]></assessments>
     <usecaptcha><![CDATA[D]]></usecaptcha>
     <usetokens><![CDATA[N]]></usetokens>
-    <bounce_email><![CDATA[anne.lhote@sciencespo.fr]]></bounce_email>
+    <bounce_email><![CDATA[anne.lhote@gmail.com]]></bounce_email>
     <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
     <emailresponseto/>
     <tokenlength><![CDATA[15]]></tokenlength>
