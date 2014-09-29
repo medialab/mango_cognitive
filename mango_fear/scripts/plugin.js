@@ -1,24 +1,40 @@
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
 // s, l
-var aKeys		= [115, 108];
+var aKeys			= [115, 108];
 
 // Sleep duration between steps
-var iWait01		= 500;
-var iWait02		= 1000;
-var iWait03		= 250;
-var iWait04		= 1750;
-var iWait05		= 15000;
-var iWait06		= 5000;
+var iWait01			= 500;
+var iWait02			= 1000;
+var iWait03			= 250;
+var iWait04			= 1750;
+var iWait05			= 15000;
+var iWait06			= 5000;
 
 // Set path to fear images
-var sPluginPath	= 'mango/mango_fear/';
-var sImagesPath	= sPluginPath + 'images/';
-var aImages		= new Array();
-var iTimeout	= 0;
-var iScore		= 0;
-var iSteps		= 60;
-var sToken		= -1;
+var sPluginPath 	= 'mango/mango_fear/';
+var sImagesPath		= sPluginPath + 'images/';
+
+// Initialize variables
+var aImages			= new Array();
+var iTimeout		= 0;
+var iScore			= 0;
+var iSteps			= 60;
+var sToken			= -1;
+var sLang			= '';
+
+// Initialize texts
+var sText_01		= {fr : 'Vous avez obtenu ', en : 'You have '};
+var sText_02		= {fr : ' réponses correctes ', en : ' correct responses '};
+var sText_03		= {fr : ' réponse correcte ', en : ' correct response '};
+var sText_04		= {fr : 'sur ', en : 'on '};
+var sText_05		= {fr : 'PEUR', en : 'FEAR'};
+var sText_06		= {fr : 'COLERE', en : 'ANGER'};
+var sText_07		= {fr : 'touche S', en : 'S key'};
+var sText_08		= {fr : 'touche L', en : 'L key'};
+var sText_09		= {fr : 'Appuyez sur espace pour continuer.', en : 'Press space key to continue.'};
+var sText_10		= {fr : 'Chargement des images du jeu. Veuillez patienter.', en : 'Loading game images. Please wait.'};
+var sText_11		= {fr : 'Vous êtes au milieu de l\'expérience ! Pause de 15 secondes.', en : 'You are in the middle of the experiment ! 15 seconds break.'};
 
 
 function onKeyPress(e) {
@@ -114,22 +130,22 @@ function displayScoreMessage(middle) {
 	// Hide image
 	$('.fear img').attr('src', '');
 	// Build sScoreMessage
-	var sScoreMessage = 'Vous avez obtenu ' + iScore;
+	var sScoreMessage = '<span class="next">' + sText_01[sLang] + iScore;
 	if(iScore > 1) {
-		sScoreMessage += ' réponses correctes ';
+		sScoreMessage += sText_02[sLang];
 	} else {
-		sScoreMessage += ' réponse correcte ';
+		sScoreMessage += sText_03[sLang];
 	}
-	sScoreMessage +=  'sur ' + iSteps + '.<br/><br/>';
+	sScoreMessage +=  sText_04[sLang] + iSteps + '.<br/></span>';
 	// If the user token is odd
 	if(sToken % 2) {
-		sScoreMessage += '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L<br/><br/>';
+		sScoreMessage += '<b>' + sText_05[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_06[sLang] + '</b> = ' + sText_08[sLang] + '<br/><br/>';
 	// If the user token is even
 	} else {
-		sScoreMessage += '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L<br/><br/>';
+		sScoreMessage += '<b>' + sText_06[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_05[sLang] + '</b> = ' + sText_08[sLang];
 	}
 	if(middle) {
-		sScoreMessage += 'Vous êtes au milieu de l\'expérience ! Pause de 15 secondes.';
+		sScoreMessage += '<br/><br/>' + sText_11[sLang];
 	}
 	// Display this sScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
@@ -140,14 +156,12 @@ function displayScoreMessage(middle) {
 function step_01() {
 	// Display image
 	$('.lightbox img').attr('src', '').show();
-	// Get current user token
-	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// If the user token is odd
 	if(sToken % 2) {
-		sScoreMessage = '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L';
+		sScoreMessage = '<b>' + sText_05[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_06[sLang] + '</b> = ' + sText_08[sLang] + '<br/><br/>';
 	// If the user token is even
 	} else {
-		sScoreMessage = '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L';
+		sScoreMessage = '<b>' + sText_06[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_05[sLang] + '</b> = ' + sText_08[sLang];
 	}
 	// Display the ScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
@@ -168,11 +182,6 @@ function step_02(i) {
 function step_03(i) {
 	// Display the fixing cross
 	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
-	// Vertical center images
-	if($('.lightbox img').css('margin-top') == '0px') {
-		var tmp = ($('.lightbox').height() - $('.lightbox .message').height() - $('.lightbox .message').css('margin-top').replace('px', '') - 406) / 2;
-		$('.lightbox img').css('margin-top', tmp + 'px');
-	}
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -197,11 +206,16 @@ function step_05(i) {
 }
 
 $(document).ready(function() {
+	// Get the survey language
+	sLang = $('html').attr('lang');
+	// Get the survey ID
+	sSurveyId = $('#sid').val();
+	// Get current user token
+	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// Display the spinner
 	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
-	// Display this sScoreMessage
-	sScoreMessage = 'Chargement des images du jeu. Veuillez patienter.<br/><br/>';
-	$('.fear .message').html(sScoreMessage).show();
+	// Display Loading message
+	$('.fear .message').html(sText_10[sLang]).show();
 	// Set default values
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val('-1');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').removeClass('empty');
@@ -219,15 +233,23 @@ $(document).ready(function() {
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00filename > input[type="text"]').removeClass('empty');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').val('-1');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').removeClass('empty');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00screenresolution > input[type="text"]').val('-1');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00screenresolution > input[type="text"]').removeClass('empty');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00windowdimensions > input[type="text"]').val('-1');
+	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00windowdimensions > input[type="text"]').removeClass('empty');
 	// Preload all the images into cache
 	$.ajax({
 		type: 'POST',
 		url: rooturl + sPluginPath + 'load_fear_images.php',
-		data: { token: sToken },
+		data: { token: sToken, survey: sSurveyId },
 		success: function(data) {
 			var oResult = JSON.parse(data);
-			// Set user group for all input
+			// Set user group for all inputs
 			$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val(oResult.user_group);
+			// Set screen resolution for all inputs
+			$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00screenresolution > input[type="text"]').val(screen.width + ' x ' + screen.height);
+			// Set window dimension for all inputs
+			$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00windowdimensions > input[type="text"]').val(document.body.clientWidth + ' x ' + document.body.clientHeight);
 			// Preload all the images into cache before launching the game
 			aImages			= oResult.images;
 			var imageObj	= new Image();

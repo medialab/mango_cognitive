@@ -12,12 +12,27 @@ var iWait04			= 1750;
 // Set path to fear images
 var sPluginPath		= 'mango/mango_fear/';
 var sImagesPath		= sPluginPath + 'images/';
+
+// Initialize variables
 var aImages			= ['M20_R_A3.png', 'M20_R_F5.png', 'F19_D_A7.png', 'F19_D_F5.png', 'M20_D_A5.png', 'F19_D_A3.png', 'M20_D_F7.png', 'M20_D_A1.png', 'F19_L_A5.png', 'M20_L_F1.png', 'M20_D_F3.png', 'M20_L_A7.png', 'F19_R_A1.png', 'F19_D_F1.png', 'F19_L_F3.png', 'F19_R_F7.png'];
 var iTimeout		= 0;
 var iCounter		= 0;
 var iScore			= 0;
 var iSteps			= 4;
 var sToken			= -1;
+var sLang			= '';
+
+// Initialize texts
+var sText_01		= {fr : 'Vous avez obtenu ', en : 'You have '};
+var sText_02		= {fr : ' réponses correctes ', en : ' correct responses '};
+var sText_03		= {fr : ' réponse correcte ', en : ' correct response '};
+var sText_04		= {fr : 'sur ', en : 'on '};
+var sText_05		= {fr : 'PEUR', en : 'FEAR'};
+var sText_06		= {fr : 'COLERE', en : 'ANGER'};
+var sText_07		= {fr : 'touche S', en : 'S key'};
+var sText_08		= {fr : 'touche L', en : 'L key'};
+var sText_09		= {fr : 'Appuyez sur espace pour continuer.', en : 'Press space key to continue.'};
+var sText_10		= {fr : 'Chargement des images du jeu. Veuillez patienter.', en : 'Loading game images. Please wait.'};
 
 
 function onKeyPress(e) {
@@ -69,21 +84,21 @@ function displayScoreMessage() {
 	// Hide image
 	$('.fear img').attr('src', '');
 	// Build sScoreMessage
-	var sScoreMessage = '<span class="next">Vous avez obtenu ' + iScore;
+	var sScoreMessage = '<span class="next">' + sText_01[sLang] + iScore;
 	if(iScore > 1) {
-		sScoreMessage += ' réponses correctes ';
+		sScoreMessage += sText_02[sLang];
 	} else {
-		sScoreMessage += ' réponse correcte ';
+		sScoreMessage += sText_03[sLang];
 	}
-	sScoreMessage +=  'sur ' + iSteps + '.<br/></span>';
+	sScoreMessage +=  sText_04[sLang] + iSteps + '.<br/></span>';
 	// If the user token is odd
 	if(oResponse.token % 2) {
-		sScoreMessage += '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L<br/><br/>';
+		sScoreMessage += '<b>' + sText_05[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_06[sLang] + '</b> = ' + sText_08[sLang] + '<br/><br/>';
 	// If the user token is even
 	} else {
-		sScoreMessage += '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L';
+		sScoreMessage += '<b>' + sText_06[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_05[sLang] + '</b> = ' + sText_08[sLang];
 	}
-	sScoreMessage += '<span class="next"><br/><br/>Appuyez sur espace pour continuer.</span>';
+	sScoreMessage += '<span class="next"><br/><br/>' + sText_09[sLang] + '</span>';
 	// Display this sScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
 	// Reset score
@@ -130,12 +145,12 @@ function step_01() {
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// If the user token is odd
 	if(sToken % 2) {
-		sScoreMessage = '<b>PEUR</b> = touche S<div class="space" /><b>COLERE</b> = touche L<br/><br/>';
+		sScoreMessage = '<b>' + sText_05[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_06[sLang] + '</b> = ' + sText_08[sLang] + '<br/><br/>';
 	// If the user token is even
 	} else {
-		sScoreMessage = '<b>COLERE</b> = touche S<div class="space" /><b>PEUR</b> = touche L';
+		sScoreMessage = '<b>' + sText_06[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_05[sLang] + '</b> = ' + sText_08[sLang];
 	}
-	sScoreMessage += '<span class="next"><br/><br/>Appuyez sur espace pour continuer.</span>';
+	sScoreMessage += '<span class="next"><br/><br/>' + sText_09[sLang] + '</span>';
 	// Hide image
 	$('.fear img').attr('src', '');
 	// Display this sScoreMessage
@@ -191,17 +206,12 @@ function step_05() {
 }
 
 $(document).ready(function() {
-	// Vertical center images
-	if($('.lightbox img').css('margin-top') == '0px') {
-		// var tmp = ($('.lightbox').height() - $('.lightbox .message').height() - $('.lightbox .message').css('margin-top').replace('px', '') - 406) / 2;
-		var tmp = ($('.lightbox').height() - 406) / 2;
-		$('.lightbox img').css('top', tmp + 'px');
-	}
+	// Get the survey language
+	sLang = $('html').attr('lang');
 	// Display the spinner
 	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
-	// Display this sScoreMessage
-	sScoreMessage	= 'Chargement des images du jeu. Veuillez patienter.';
-	$('.fear .message').html(sScoreMessage).show();
+	// Display Loading message
+	$('.fear .message').html(sText_10[sLang]).show();
 	// Preload all the images into cache
 	var length 		= aImages.length - 1;
 	$.each(aImages, function(index) {
