@@ -1,40 +1,43 @@
-// Key accepted as user interaction
-// http://expandinghead.net/keycode.html
-// s, l
-var aKeys			= [115, 108];
+// Mouse clicks accepted as user interaction
+// left click, right click
+var aKeys						= [1, 3];
 
 // Sleep duration between steps
-var iWait01			= 3000;
-var iWait02			= 250;
-var iWait03			= 1000;
-var iWait04			= 1000;
-var iWait05			= 400;
-var iWait06			= 100;
-var iWait07			= 400;
-var iWait08			= 3000;
-var iWait09			= 400;
-var iWait10			= 5000;
+var iWait01						= 3000;
+var iWait02						= 250;
+var iWait03						= 1000;
+var iWait04						= 1000;
+var iWait05						= 400;
+var iWait06						= 100;
+var iWait07						= 400;
+var iWait08						= 3000;
+var iWait09						= 400;
+var iWait10						= 5000;
 
 // Levels for experiment
-var aEasyLess		= new Array();
-var aEasyMore		= new Array();
-var aMiddleLess		= new Array();
-var aMiddleMore		= new Array();
-var aHardLess		= new Array();
-var aHardMore		= new Array();
-var aReferences		= new Array();
-var aImages			= new Array();
-var aRoundImages	= new Array();
+var aEasyLess					= new Array();
+var aEasyMore					= new Array();
+var aMiddleLess					= new Array();
+var aMiddleMore					= new Array();
+var aHardLess					= new Array();
+var aHardMore					= new Array();
+var aReferences					= new Array();
+var aImages						= new Array();
+var aRoundImages				= new Array();
 
 // Context
 var iNbRound 					= 3;
 var iNbImagesByRound 			= 12;
 var iNbImagesByLevelByRound 	= 2;
 var iTimeout					= 0;
+var iSlider						= 0;
+var sImage 						= '';
 var sImagesPath					= 'mango/mango_metacognition/images/';
-var sMessageStart				= "Attention c'est parti!";
-var sMessageAnswer				= "moins ? plus";
 var sContext					= 'experiment/';
+var sMessageReference			= 'Voici le cercle de référence.';
+var sMessageStart				= 'Attention c\'est parti!';
+var sMessageQuestion			= 'moins ? plus';
+
 
 function getRandomValues(iNumberOfValues, iMin, iMax, aForbiddenValues) {
 	// Set empty array as default value
@@ -50,13 +53,17 @@ function getRandomValues(iNumberOfValues, iMin, iMax, aForbiddenValues) {
 	return aResult;
 }
 
-function onKeyPress(e) {
+function onMouseClick(e) {
 	if(aKeys.indexOf(e.which) != -1) {
+		// Unbind user interactions
+		$(document).unbind('click');
+		$(document).unbind('contextmenu');
+		$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 		switch(e.which) {
-			case 115:
+			case 1:
 				sAnswer = 'less';
 				break;
-			case 108:
+			case 3:
 				sAnswer = 'more';
 				break;
 		}
@@ -64,21 +71,34 @@ function onKeyPress(e) {
 			setAnswer(sAnswer, e.data.step);
 		}
 	}
+	return false;
 }
 
 function setAnswer(sAnswer, step) {
 	clearTimeout(iTimeout);
 	iStopTimestamp = new Date().getTime();
-	$(document).unbind('keypress');
+	// Check if user answer is correct
+	sNumberOfPointsDispayed = parseInt(sImage.split('_')[2]);
+	sImageAnswer = (sNumberOfPointsDispayed < 50) ? 'less' : 'more';
+	sIsCorrect = (sImageAnswer == sAnswer) ? '1' : '0';
 	// Set as answer
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + step + ') > .answer_cell_00delayanswer > input[type="text"]').val(iStopTimestamp - iStartTimestamp);
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + step + ') > .answer_cell_00answer > input[type="text"]').val(sAnswer);
+	$('.array-multi-flexi-text .question tr.questions-list:eq(' + step + ') > .answer_cell_00correct > input[type="text"]').val(sAnswer);
 	// Go to next step
 	step_10(step);
 }
 
+function saveSlider(step) {
+	iSlider = $('.numeric-multi:visible .slider-callout').text();
+	$('.array-multi-flexi-text .question tr.questions-list:eq(' + step + ') > .answer_cell_00selftrust > input[type="text"]').val(iSlider);
+}
+
 function exit() {
-	$(document).unbind('keypress');
+	// Unbind user interactions
+	$(document).unbind('click');
+	$(document).unbind('contextmenu');
+	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 	$("#movenextbtn").click();
 	$("#movesubmitbtn").click();
 }
@@ -90,9 +110,7 @@ function preloadImages() {
 	// Add fixing cross image path
 	aImages.push(sImagesPath + 'fixing_cross.bmp');
 	// Build 3 references circles paths
-	console.log($('.trainingReference').text());
 	aReferences		= getRandomValues(3, 1, 12, new Array($('.trainingReference').text()));
-	console.log(aReferences);
 	aImages.push(sImagesPath + 'reference/stim_050_' + aReferences[0] + '.BMP');
 	aImages.push(sImagesPath + 'reference/stim_050_' + aReferences[1] + '.BMP');
 	aImages.push(sImagesPath + 'reference/stim_050_' + aReferences[2] + '.BMP');
@@ -184,14 +202,15 @@ function step_01(i) {
 	// Randomnly sort aRoundImages array
 	aRoundImages.sort(function randOrd(){return (Math.round(Math.random()) - 0.5); });
 	// Display the reference disc
-	$('.lightbox .text').html('Voici le cercle de référence.');
+	$('.lightbox .text').html(sMessageReference);
 	$('.lightbox .image').attr('src', sImagesPath + 'reference/stim_050_' + aReferences[(i / iNbImagesByRound)] + '.BMP');
 	// Got to next step
 	setTimeout(function() {step_02(i)}, iWait01);
 }
 
 function step_02(i) {
-	// Display nothing
+	// Display blank image
+	$('.lightbox .text').html('');
 	$('.lightbox .image').attr('src', aImages[0]);
 	// Got to next step
 	setTimeout(function() {step_03(i)}, iWait02);
@@ -205,13 +224,11 @@ function step_03(i) {
 }
 
 function step_04(i) {
-	// Empty lightbox
+	// Display blank image
 	$('.lightbox .text').html('');
 	$('.lightbox .image').attr('src', aImages[0]);
 	// Hide all questions
 	$('div[id^="question"]').hide();
-	// Display lightbox
-	$('.lightbox').show();
 	// Got to next step
 	setTimeout(function() {step_05(i)}, iWait04);
 }
@@ -224,8 +241,8 @@ function step_05(i) {
 }
 
 function step_06(i) {
-	// Display the image
 	iStartTimestamp = new Date().getTime();
+	// Display the image
 	sImage = aRoundImages.pop();
 	$('.lightbox .image').attr('src', sImage);
 	// Set image name as answer
@@ -235,33 +252,36 @@ function step_06(i) {
 }
 
 function step_07(i) {
-	// Display nothing
+	// Display blank image
 	$('.lightbox .image').attr('src', aImages[0]);
 	// Start listening on user interactions
-	$(document).bind('keypress', {step: i}, onKeyPress);
+	$(document).bind('click', {step: i}, onMouseClick);
+	$(document).bind('contextmenu', {step: i}, onMouseClick);
 	// Got to next step
 	iTimeout = setTimeout(function() {step_08(i)}, iWait07);
 }
 
 function step_08(i) {
 	// Display help message to answer
-	$('.lightbox .text').html(sMessageAnswer);
+	$('.lightbox .question').html(sMessageQuestion);
 	// Got to next step
 	iTimeout = setTimeout(function() {step_09(i)}, iWait08);
 }
 
 function step_09(i) {
-	// Display nothing
-	$('.lightbox .text').html('');
-	setAnswer('no_answer', i);
+	// Unbind user interactions
+	$(document).unbind('click');
+	$(document).unbind('contextmenu');
+	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
+	$('.lightbox .question').html('');
 	// Got to next step
-	setTimeout(function() {step_10(i)}, iWait09);
+	iTimeout = setTimeout(function() {setAnswer('no_answer', i)}, iWait09);
 }
 
 function step_10(i) {
-	// Hide text and image
-	$('.lightbox .text').html('');
+	// Display nothing
 	$('.lightbox img').attr('src', '');
+	$('.lightbox .question').html('');
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Display the right one
@@ -271,11 +291,29 @@ function step_10(i) {
 	// Got to next step
 	if((i + 1) == (iNbRound * iNbImagesByRound)) {
 		exit();
-		setTimeout('exit()', iWait10);
+		setTimeout(
+			function() {
+				saveSlider(i);
+				exit();
+			},
+			iWait10
+		);
 	} else if((i + 1) % iNbImagesByRound == 0) {
-		setTimeout(function() {step_01(i + 1)}, iWait10);
+		setTimeout(
+			function() {
+				saveSlider(i);
+				step_01(i + 1);
+			},
+			iWait10
+		);
 	} else {
-		setTimeout(function() {step_04(i + 1)}, iWait10);
+		setTimeout(
+			function() {
+				saveSlider(i);
+				step_04(i + 1);
+			},
+			iWait10
+		);
 	}
 }
 
@@ -284,9 +322,9 @@ $(document).ready(
 		// Move lightbox outside of the question
 		$('.lightbox').appendTo('[id^="group-"]');
 		// Display spinner for images loading
-		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
 		$('.lightbox img').css('padding-top', '50px');
 		$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
 		// Set default values into the array
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').removeClass('empty');
@@ -301,10 +339,11 @@ $(document).ready(
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').val('-1');
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').removeClass('empty');
 		// CSS for the sliders
-		$('div[id^=question].numeric-multi').css('margin-left', '50%');
-		$('div[id^=question].numeric-multi > span').css('margin-left', '-50%');
 		$('div[id^=question].numeric-multi .multinum-slider').css('color', 'white');
 		$('div[id^=question].numeric-multi .slider-callout').css('color', 'white');
+		$('div[id^=question].numeric-multi .multinum-slider').addClass('screencentered');
+		// Disable context menu
+		$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 		// Preload images and launch game
 		preloadImages();
 	}

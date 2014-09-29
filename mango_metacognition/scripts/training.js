@@ -1,33 +1,37 @@
-// Key accepted as user interaction
-// http://expandinghead.net/keycode.html
-// s, l
-var aKeys			= [115, 108];
+// Mouse clicks accepted as user interaction
+// left click, right click
+var aKeys				= [1, 3];
 
 // Sleep duration between steps
-var iWait01			= 3000;
-var iWait02			= 250;
-var iWait03			= 1000;
-var iWait04			= 1000;
-var iWait05			= 400;
-var iWait06			= 100;
-var iWait07			= 400;
-var iWait08			= 3000;
-var iWait09			= 400;
-var iWait10			= 5000;
+var iWait01				= 3000;
+var iWait02				= 250;
+var iWait03				= 1000;
+var iWait04				= 1000;
+var iWait05				= 400;
+var iWait06				= 100;
+var iWait07				= 400;
+var iWait08				= 3000;
+var iWait09				= 400;
+var iWait10				= 5000;
 
 // Levels for training
-var aEasy			= new Array(40, 60);
-var aMiddle			= new Array(44, 56);
-var aHard			= new Array(48, 52);
+var aEasy				= new Array(40, 60);
+var aMiddle				= new Array(44, 56);
+var aHard				= new Array(48, 52);
 
 // Context
-var sImagesPath		= 'mango/mango_metacognition/images/';
-var iImageIterator	= 0;
-var sMessageStart	= "Attention c'est parti!";
-var sMessageAnswer	= "moins ? plus";
-var iMaxIteration	= 3;
-var sContext		= 'training/';
-var aImages			= new Array();
+var iImageIterator		= 0;
+var iMaxIteration		= 3;
+var iTimeout			= 0;
+var sImage 				= '';
+var sImagesPath			= 'mango/mango_metacognition/images/';
+var sContext			= 'training/';
+var sMessageReference	= 'Voici le cercle de référence.';
+var sMessageStart		= 'Attention c\'est parti!';
+var sMessageQuestion	= 'moins ? plus';
+var sMessageKeys		= '<div class="key">Moins = Clic gauche</div><div class="key">Plus = Clic droit</div>';
+var aImages				= new Array();
+
 
 // Load all the images needed for this step into the browser cache then launch game
 function preloadImages() {
@@ -74,46 +78,55 @@ function getRandomValues(iNumberOfValues, iMin, iMax) {
 	return aResult;
 }
 
-function onKeyPress(e) {
+function onMouseClick(e) {
 	if(aKeys.indexOf(e.which) != -1) {
 		switch(e.which) {
-			case 115:
+			case 1:
 				sAnswer = 'less';
 				break;
-			case 108:
+			case 3:
 				sAnswer = 'more';
 				break;
 		}
 		if (typeof sAnswer != 'undefined') {
-			setAnswer(sAnswer);
+			setAnswer(sAnswer, e.data.step);
 		}
 	}
+	return false;
 }
 
 function save() {
-	$(document).unbind('keypress');
+	$(document).unbind('click');
+	$(document).unbind('contextmenu');
+	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 	$("#movenextbtn").click();
 	$("#movesubmitbtn").click();
 }
 
-function setAnswer(sAnswer) {
+function setAnswer(sAnswer, step) {
+	clearTimeout(iTimeout);
 	iStopTimestamp			= new Date().getTime();
-	$(document).unbind('keypress');
+	$(document).unbind('click');
+	$(document).unbind('contextmenu');
+	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 	// Set as answer
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + iImageIterator + ') > .answer_cell_00delayanswer > input[type="text"]').val(iStopTimestamp - iStartTimestamp);
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + iImageIterator + ') > .answer_cell_00answer > input[type="text"]').val(sAnswer);
+	// Go to next step
+	step_10(step);
 }
 
 function step_01(i) {
 	// Display the reference disc
-	$('.lightbox .text').html('Voici le cercle de référence.');
+	$('.lightbox .text').html(sMessageReference);
 	$('.lightbox .image').attr('src', aImages[0]);
 	// Got to next step
 	setTimeout(function() {step_02(i)}, iWait01);
 }
 
 function step_02(i) {
-	// Display nothing
+	// Display blank image
+	$('.lightbox .text').html('');
 	$('.lightbox .image').attr('src', aImages[1]);
 	// Got to next step
 	setTimeout(function() {step_03(i)}, iWait02);
@@ -127,8 +140,8 @@ function step_03(i) {
 }
 
 function step_04(i) {
-	// Empty lightbox
-	$('.lightbox .text').html('');
+	// Display blank image
+	$('.lightbox .text').html(sMessageKeys);
 	$('.lightbox .image').attr('src', aImages[1]);
 	// Hide all questions
 	$('div[id^="question"]').hide();
@@ -153,7 +166,7 @@ function step_06(i) {
 	iImageIterator++;
 	iStartTimestamp = new Date().getTime();
 	// Display the image
-	var sImage = aImages[iImageIterator + 2];
+	sImage = aImages[iImageIterator + 2];
 	$('.lightbox .image').attr('src', sImage);
 	// Set image name as answer
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + iImageIterator + ') > .answer_cell_00image > input[type="text"]').val(sImage);
@@ -162,31 +175,36 @@ function step_06(i) {
 }
 
 function step_07(i) {
-	// Display nothing
+	// Display blank image
 	$('.lightbox .image').attr('src', aImages[1]);
+	// Start listening on user interactions
+	$(document).bind('click', {step: i}, onMouseClick);
+	$(document).bind('contextmenu', {step: i}, onMouseClick);
 	// Got to next step
-	setTimeout(function() {step_08(i)}, iWait07);
+	iTimeout = setTimeout(function() {step_08(i)}, iWait07);
 }
 
 function step_08(i) {
-	// Start listening on user interactions
-	$('.lightbox .text').html(sMessageAnswer);
-	$(document).bind('keypress', onKeyPress);
+	// Display help message to answer
+	$('.lightbox .question').html(sMessageQuestion);
 	// Got to next step
-	setTimeout(function() {step_09(i)}, iWait08);
+	iTimeout = setTimeout(function() {step_09(i)}, iWait08);
 }
 
 function step_09(i) {
-	// Display nothing
-	$('.lightbox .text').html('');
-	setAnswer('no_answer');
+	// Unbind user interactions
+	$(document).unbind('click');
+	$(document).unbind('contextmenu');
+	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
+	$('.lightbox .question').html('');
 	// Got to next step
-	setTimeout(function() {step_10(i)}, iWait09);
+	setTimeout(function() {setAnswer('no_answer', i)}, iWait09);
 }
 
 function step_10(i) {
-	// Hide image
+	// Display nothing
 	$('.lightbox img').attr('src', '');
+	$('.lightbox .question').html('');
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Display the right one
@@ -219,10 +237,11 @@ $(document).ready(
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').val('-1');
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').removeClass('empty');
 		// CSS for the sliders
-		$('div[id^=question].numeric-multi').css('margin-left', '50%');
-		$('div[id^=question].numeric-multi > span').css('margin-left', '-50%');
 		$('div[id^=question].numeric-multi .multinum-slider').css('color', 'white');
 		$('div[id^=question].numeric-multi .slider-callout').css('color', 'white');
+		$('div[id^=question].numeric-multi .multinum-slider').addClass('screencentered');
+		// Disable context menu
+		$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 		// Preload images and launch game
 		preloadImages();
 	}
