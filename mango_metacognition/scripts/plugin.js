@@ -89,6 +89,18 @@ function setAnswer(sAnswer, step) {
 	step_10(step);
 }
 
+// Got to next step
+function next_round(i) {
+	saveSlider(i);
+	if((i + 1) == (iNbRound * iNbImagesByRound)) {
+		exit();
+	} else if((i + 1) % iNbImagesByRound == 0) {
+		step_01(i + 1);
+	} else {
+		step_04(i + 1);
+	}
+}
+
 function saveSlider(step) {
 	iSlider = $('.numeric-multi:visible .slider-callout').text();
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + step + ') > .answer_cell_00selftrust > input[type="text"]').val(iSlider);
@@ -289,32 +301,20 @@ function step_10(i) {
 	// Display the right slider
 	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').css('z-index', '8');
 	// Got to next step
-	if((i + 1) == (iNbRound * iNbImagesByRound)) {
-		exit();
-		setTimeout(
-			function() {
-				saveSlider(i);
-				exit();
-			},
-			iWait10
-		);
-	} else if((i + 1) % iNbImagesByRound == 0) {
-		setTimeout(
-			function() {
-				saveSlider(i);
-				step_01(i + 1);
-			},
-			iWait10
-		);
-	} else {
-		setTimeout(
-			function() {
-				saveSlider(i);
-				step_04(i + 1);
-			},
-			iWait10
-		);
-	}
+	iTimeout = setTimeout(function() { next_round(i); }, iWait10);
+	// On click on the slider, go to next step
+	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').click(
+		function() {
+			clearTimeout(iTimeout);
+			next_round(i);
+		}
+	);
+	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider .ui-slider-handle').click(
+		function() {
+			clearTimeout(iTimeout);
+			next_round(i);
+		}
+	);	
 }
 
 $(document).ready(

@@ -111,7 +111,19 @@
     <gid><![CDATA[2167]]></gid>
     <type><![CDATA[X]]></type>
     <title><![CDATA[question01]]></title>
-    <question><![CDATA[Vous allez commencer pour une phase de test. Merci de cliquer sur le bouton Suivant quand vous serez prêts.]]></question>
+    <question><![CDATA[<p>
+	Des cercles contenant des points vont apparaître brièvement au centre de l'écran. Après la présentation de chaque cercle, vous devrez indiquer aussi <strong>rapidement</strong> et <strong>correctement</strong> que possible si celui-ci contient MOINS (bouton gauche de la souris ou du touchpad) ou PLUS (bouton droit de la souris ou du touchpad) de points qu’un le cercle de référence. Le cercle de référence vous sera présenté régulièrement au cours de l'expérience.</p>
+<p>
+	Ensuite, il vous sera demandé d'estimer votre niveau de confiance dans votre réponse. Pour cela, vous déplacerez le curseur de l'échelle (voir ci-dessous), à l’aide de la souris, jusqu'au niveau de confiance souhaité :</p>
+<p>
+	<span style="background-color:#ffff00;"><img alt="Slider" src="mango/mango_metacognition/images/slider.png" width="50%" /></span></p>
+<p>
+	0% = pas du tout confiant(e) à 100% = tout à fait confiant(e).</p>
+<p>
+	<strong><span style="color:#ff0000;">Attention ! Vous avez peu de temps pour indiquer vos réponses </span></strong></p>
+<p>
+	Vous allez commencer par une phase de test. Merci de cliquer sur le bouton Suivant quand vous serez prêt(e).</p>
+]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -155,7 +167,7 @@
     <gid><![CDATA[2169]]></gid>
     <type><![CDATA[X]]></type>
     <title><![CDATA[question03]]></title>
-    <question><![CDATA[La phase d'entrainement est terminée. Nous allons maintenant passer à la vraie phase du jeu. Cliquez sur le bouton Suivant quand vous serez prêt.]]></question>
+    <question><![CDATA[La phase d'entraînement est terminée. Nous allons maintenant passer à la vraie phase du jeu. Cliquez sur le bouton Suivant quand vous serez prêt.]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>

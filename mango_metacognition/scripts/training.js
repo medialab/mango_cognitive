@@ -205,6 +205,7 @@ function step_10(i) {
 	// Display nothing
 	$('.lightbox img').attr('src', '');
 	$('.lightbox .question').html('');
+	$('.lightbox .text').html('');
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Display the right one
@@ -212,7 +213,21 @@ function step_10(i) {
 	// Display the right slider
 	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').css('z-index', '8');
 	// Got to next step
-	setTimeout(function() {step_04(i + 1)}, iWait10);
+	iTimeout = setTimeout(function() {step_04(i + 1)}, iWait10);
+	// On click on the slider, go to next step
+	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').click(
+		function() {
+			clearTimeout(iTimeout);
+			step_04(i + 1);
+		}
+	);
+	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider .ui-slider-handle').click(
+		function() {
+			clearTimeout(iTimeout);
+			step_04(i + 1);
+		}
+	);
+	
 ;}
 
 $(document).ready(
