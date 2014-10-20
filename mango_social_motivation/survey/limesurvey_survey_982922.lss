@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+ <LimeSurveyDocType>Survey</LimeSurveyDocType>
+ <DBVersion>177</DBVersion>
+ <languages>
+  <language>fr</language>
+ </languages>
+ <groups>
+  <fields>
+   <fieldname>gid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>group_name</fieldname>
+   <fieldname>group_order</fieldname>
+   <fieldname>description</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>randomization_group</fieldname>
+   <fieldname>grelevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <gid><![CDATA[2156]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Instructions]]></group_name>
+    <group_order><![CDATA[54]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2157]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Exemple]]></group_name>
+    <group_order><![CDATA[55]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2210]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Instructions]]></group_name>
+    <group_order><![CDATA[63]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2211]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Entrainement]]></group_name>
+    <group_order><![CDATA[64]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2212]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Règles du jeu]]></group_name>
+    <group_order><![CDATA[65]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[2213]]></gid>
+    <sid><![CDATA[982922]]></sid>
+    <group_name><![CDATA[Jeu]]></group_name>
+    <group_order><![CDATA[66]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+  </rows>
+ </groups>
+ <questions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[8075]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2156]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question01]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		// Hide next button
+		$('#movenextbtn').hide();
+		$(document).keypress(
+			function(event) {
+				// Detect space keypress
+				if(event.which == 32) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>Dans cette expérience, vous allez voir une croix apparaître au centre de l'écran. Veuillez s'il vous plaît regarder la croix jusqu'à ce qu'un cercle apparaisse.&nbsp;
+<div>
+	&nbsp;</div>
+<div>
+	Vous verrez ensuite une ligne apparaître dans le cercle. Cette ligne peut être courte ou longue.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Vous devez décider si la ligne est courte ou longue.</div>
+<div>
+	Comme vous le verrez, il est dur de détecter la différence entre les lignes courtes et longues, mais faites de votre mieux !</div>
+<div>
+	&nbsp;</div>
+<div>
+	Appuyez sur la touche espace pour voir un exemple de ligne courte et un exemple de ligne longue.&nbsp;</div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9128]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2157]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question02]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		// Hide next button
+		$('#movenextbtn').hide();
+		$(document).keypress(
+			function(event) {
+				// Detect space keypress
+				if(event.which == 32) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>
+<div class="lightbox white">
+	<div class="content">
+		<div class="images screencentered">
+			<div class="column left">
+				<img alt="" height="250" src="mango/mango_social_motivation/images/short.bmp" width="250" />
+				<div class="instructions">
+					Touche S</div>
+			</div>
+			<div class="column cross">
+				<span>+</span></div>
+			<div class="column right">
+				<img alt="" height="250" src="mango/mango_social_motivation/images/long.bmp" width="250" />
+				<div class="instructions">
+					Touche L</div>
+			</div>
+		</div>
+	</div>
+</div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9129]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2210]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[question03]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		// Hide next button
+		$('#movenextbtn').hide();
+		$(document).keypress(
+			function(event) {
+				// Detect space keypress
+				if(event.which == 32) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>
+<p>
+	Lorsque vous fournirez une réponse correcte, on vous indiquera parfois que votre réponse était correcte.</p>
+<p>
+	Cette indication prendra la forme d'une personne vous manifestant son approbation.Aucune indication ne vous sera donnée pour les réponses incorrectes.</p>
+<p>
+	Notez que vous recevrez cette indication pour une partie de vos réponses seulement. La plupart du temps, aucune indication ne vous sera présentée.</p>
+<p>
+	Essayez s'il vous plaît de répondre le plus vite possible, mais en faisant le moins d'erreurs possible.</p>
+<p>
+	Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous pouvez appuyer sur la touche espace pour commencer la phase d'entraînement.</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9130]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2211]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[question04]]></title>
+    <question><![CDATA[<script type="text/javascript" src="mango/mango_social_motivation/scripts/training.js"></script>
+<div class="lightbox black socialmotivation">
+	<div class="message">
+		&nbsp;</div>
+	<img alt="" class="screencentered" src="" /></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9131]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2212]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question05]]></title>
+    <question><![CDATA[<script type="text/javascript">
+$(document).ready(
+	function() {
+		// Hide next button
+		$('#movenextbtn').hide();
+		$(document).keypress(
+			function(event) {
+				// Detect space keypress
+				if(event.which == 32) {
+					$('#movenextbtn').click();
+				}
+			}
+		);
+	}
+);
+</script>
+<p>
+	La phase d'entraînement est terminée !</p>
+<p>
+	Vous allez maintenant commencer la vraie tâche. La tâche est divisée en trois parties séparées par une pause L'ensemble de la tâche va durer environ 25 minutes.</p>
+<p>
+	Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous appuyez sur la touche espace !</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9132]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2213]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[question06]]></title>
+    <question><![CDATA[<script type="text/javascript" src="mango/mango_social_motivation/scripts/plugin.js"></script>
+<div class="lightbox black socialmotivation">
+	<div class="message">
+		&nbsp;</div>
+	<img alt="" class="screencentered" src="" /></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+  </rows>
+ </questions>
+ <surveys>
+  <fields>
+   <fieldname>sid</fieldname>
+   <fieldname>admin</fieldname>
+   <fieldname>expires</fieldname>
+   <fieldname>startdate</fieldname>
+   <fieldname>adminemail</fieldname>
+   <fieldname>anonymized</fieldname>
+   <fieldname>faxto</fieldname>
+   <fieldname>format</fieldname>
+   <fieldname>template</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>additional_languages</fieldname>
+   <fieldname>datestamp</fieldname>
+   <fieldname>usecookie</fieldname>
+   <fieldname>allowregister</fieldname>
+   <fieldname>allowsave</fieldname>
+   <fieldname>autonumber_start</fieldname>
+   <fieldname>autoredirect</fieldname>
+   <fieldname>allowprev</fieldname>
+   <fieldname>printanswers</fieldname>
+   <fieldname>ipaddr</fieldname>
+   <fieldname>refurl</fieldname>
+   <fieldname>publicstatistics</fieldname>
+   <fieldname>publicgraphs</fieldname>
+   <fieldname>listpublic</fieldname>
+   <fieldname>htmlemail</fieldname>
+   <fieldname>tokenanswerspersistence</fieldname>
+   <fieldname>assessments</fieldname>
+   <fieldname>usecaptcha</fieldname>
+   <fieldname>usetokens</fieldname>
+   <fieldname>bounce_email</fieldname>
+   <fieldname>attributedescriptions</fieldname>
+   <fieldname>emailresponseto</fieldname>
+   <fieldname>tokenlength</fieldname>
+   <fieldname>savetimings</fieldname>
+   <fieldname>showxquestions</fieldname>
+   <fieldname>showgroupinfo</fieldname>
+   <fieldname>shownoanswer</fieldname>
+   <fieldname>showqnumcode</fieldname>
+   <fieldname>bouncetime</fieldname>
+   <fieldname>bounceprocessing</fieldname>
+   <fieldname>bounceaccounttype</fieldname>
+   <fieldname>bounceaccounthost</fieldname>
+   <fieldname>bounceaccountpass</fieldname>
+   <fieldname>bounceaccountencryption</fieldname>
+   <fieldname>bounceaccountuser</fieldname>
+   <fieldname>showwelcome</fieldname>
+   <fieldname>showprogress</fieldname>
+   <fieldname>navigationdelay</fieldname>
+   <fieldname>nokeyboard</fieldname>
+   <fieldname>alloweditaftercompletion</fieldname>
+   <fieldname>emailnotificationto</fieldname>
+   <fieldname>googleanalyticsstyle</fieldname>
+   <fieldname>googleanalyticsapikey</fieldname>
+   <fieldname>sendconfirmation</fieldname>
+   <fieldname>questionindex</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <sid><![CDATA[982922]]></sid>
+    <admin><![CDATA[Anne L'Hôte]]></admin>
+    <adminemail><![CDATA[anne.lhote@gmail.com]]></adminemail>
+    <anonymized><![CDATA[N]]></anonymized>
+    <faxto/>
+    <format><![CDATA[G]]></format>
+    <template><![CDATA[mango]]></template>
+    <language><![CDATA[fr]]></language>
+    <datestamp><![CDATA[N]]></datestamp>
+    <usecookie><![CDATA[N]]></usecookie>
+    <allowregister><![CDATA[N]]></allowregister>
+    <allowsave><![CDATA[Y]]></allowsave>
+    <autonumber_start><![CDATA[0]]></autonumber_start>
+    <autoredirect><![CDATA[Y]]></autoredirect>
+    <allowprev><![CDATA[N]]></allowprev>
+    <printanswers><![CDATA[N]]></printanswers>
+    <ipaddr><![CDATA[N]]></ipaddr>
+    <refurl><![CDATA[N]]></refurl>
+    <publicstatistics><![CDATA[N]]></publicstatistics>
+    <publicgraphs><![CDATA[N]]></publicgraphs>
+    <listpublic><![CDATA[N]]></listpublic>
+    <htmlemail><![CDATA[Y]]></htmlemail>
+    <tokenanswerspersistence><![CDATA[N]]></tokenanswerspersistence>
+    <assessments><![CDATA[N]]></assessments>
+    <usecaptcha><![CDATA[D]]></usecaptcha>
+    <usetokens><![CDATA[N]]></usetokens>
+    <bounce_email><![CDATA[anne.lhote@gmail.com]]></bounce_email>
+    <emailresponseto/>
+    <tokenlength><![CDATA[15]]></tokenlength>
+    <savetimings><![CDATA[N]]></savetimings>
+    <showxquestions><![CDATA[Y]]></showxquestions>
+    <showgroupinfo><![CDATA[B]]></showgroupinfo>
+    <shownoanswer><![CDATA[Y]]></shownoanswer>
+    <showqnumcode><![CDATA[X]]></showqnumcode>
+    <bounceprocessing><![CDATA[N]]></bounceprocessing>
+    <showwelcome><![CDATA[N]]></showwelcome>
+    <showprogress><![CDATA[Y]]></showprogress>
+    <navigationdelay><![CDATA[0]]></navigationdelay>
+    <nokeyboard><![CDATA[N]]></nokeyboard>
+    <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
+    <emailnotificationto/>
+    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <questionindex><![CDATA[0]]></questionindex>
+   </row>
+  </rows>
+ </surveys>
+ <surveys_languagesettings>
+  <fields>
+   <fieldname>surveyls_survey_id</fieldname>
+   <fieldname>surveyls_language</fieldname>
+   <fieldname>surveyls_title</fieldname>
+   <fieldname>surveyls_description</fieldname>
+   <fieldname>surveyls_welcometext</fieldname>
+   <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_url</fieldname>
+   <fieldname>surveyls_urldescription</fieldname>
+   <fieldname>surveyls_email_invite_subj</fieldname>
+   <fieldname>surveyls_email_invite</fieldname>
+   <fieldname>surveyls_email_remind_subj</fieldname>
+   <fieldname>surveyls_email_remind</fieldname>
+   <fieldname>surveyls_email_register_subj</fieldname>
+   <fieldname>surveyls_email_register</fieldname>
+   <fieldname>surveyls_email_confirm_subj</fieldname>
+   <fieldname>surveyls_email_confirm</fieldname>
+   <fieldname>surveyls_dateformat</fieldname>
+   <fieldname>email_admin_notification_subj</fieldname>
+   <fieldname>email_admin_responses_subj</fieldname>
+   <fieldname>email_admin_notification</fieldname>
+   <fieldname>email_admin_responses</fieldname>
+   <fieldname>surveyls_numberformat</fieldname>
+   <fieldname>surveyls_attributecaptions</fieldname>
+   <fieldname>attachments</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <surveyls_survey_id><![CDATA[982922]]></surveyls_survey_id>
+    <surveyls_language><![CDATA[fr]]></surveyls_language>
+    <surveyls_title><![CDATA[GC - Motivation Sociale]]></surveyls_title>
+    <surveyls_description/>
+    <surveyls_welcometext/>
+    <surveyls_endtext/>
+    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_urldescription/>
+    <surveyls_email_invite_subj><![CDATA[Invitation à participer à un questionnaire]]></surveyls_email_invite_subj>
+    <surveyls_email_invite><![CDATA[Cher(e) {FIRSTNAME},<br />
+<br />
+Vous avez été invité à participer à un questionnaire.<br />
+<br />
+Celui-ci est intitulé :<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Cliquez ici pour remplir ce questionnaire :<br />
+{SURVEYURL}<br />
+<br />
+Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
+{OPTOUTURL}<br />
+<br />
+Si vous êtes sur liste noire mais que vous voulez participer à ce questionnaire et recevoir les invitations, merci de cliquer sur le lien suivant :<br />
+{OPTINURL}]]></surveyls_email_invite>
+    <surveyls_email_remind_subj><![CDATA[Rappel pour participer à un questionnaire]]></surveyls_email_remind_subj>
+    <surveyls_email_remind><![CDATA[Cher(e) {FIRSTNAME},<br />
+<br />
+Vous avez été invité(e) à participer à un questionnaire récemment.<br />
+<br />
+Nous avons pris en compte que vous n'avez pas encore complété le questionnaire, et nous vous rappelons que celui-ci est toujours disponible si vous souhaitez participer.<br />
+<br />
+Le questionnaire est intitulé :<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Cliquez ici pour faire le questionnaire:<br />
+{SURVEYURL}<br />
+<br />
+Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
+{OPTOUTURL}]]></surveyls_email_remind>
+    <surveyls_email_register_subj><![CDATA[Confirmation d'enregistrement au questionnaire]]></surveyls_email_register_subj>
+    <surveyls_email_register><![CDATA[Bonjour {FIRSTNAME},<br />
+<br />
+Vous (ou quelqu’un utilisant votre adresse électronique) vous êtes enregistré pour participer à un questionnaire en ligne intitulé {SURVEYNAME}.<br />
+<br />
+Pour compléter ce questionnaire, cliquez sur le lien suivant :<br />
+{SURVEYURL}<br />
+<br />
+Si vous avez des questions à propos de ce questionnaire, ou si vous ne vous êtes pas enregistré pour participer à celui-ci et croyez que ce courriel est une erreur, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}]]></surveyls_email_register>
+    <surveyls_email_confirm_subj><![CDATA[Confirmation de votre participation à notre questionnaire]]></surveyls_email_confirm_subj>
+    <surveyls_email_confirm><![CDATA[Bonjour {FIRSTNAME},<br />
+<br />
+Ce courriel vous confirme que vous avez complété le questionnaire intitulé {SURVEYNAME} et que votre réponse a été enregistrée. Merci pour votre participation.<br />
+<br />
+Si vous avez des questions à propos de ce courriel, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_dateformat><![CDATA[9]]></surveyls_dateformat>
+    <email_admin_notification_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME}]]></email_admin_notification_subj>
+    <email_admin_responses_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME} avec résultats]]></email_admin_responses_subj>
+    <email_admin_notification><![CDATA[Bonjour,<br />
+<br />
+Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
+<br />
+Cliquer sur le lien suivant pour recharger votre questionnaire :<br />
+{RELOADURL}<br />
+<br />
+Cliquer sur le lien suivant pour voir la réponse :<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Cliquer sur le lien suivant pour éditer la réponse :<br />
+{EDITRESPONSEURL}<br />
+<br />
+Visualiser les statistiques en cliquant ici :<br />
+{STATISTICSURL}<br />
+<br />
+les réponses suivantes ont été données par le participant :<br />
+{ANSWERTABLE}]]></email_admin_notification>
+    <email_admin_responses><![CDATA[Bonjour,<br />
+<br />
+Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
+<br />
+Cliquer sur le lien suivant pour recharger votre questionnaire :<br />
+{RELOADURL}<br />
+<br />
+Cliquer sur le lien suivant pour voir la réponse :<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Cliquez sur le lien suivant pour éditer la réponse individuelle :<br />
+{EDITRESPONSEURL}<br />
+<br />
+Visualiser les statistiques en cliquant ici :<br />
+{STATISTICSURL}<br />
+<br />
+<br />
+les réponses suivantes ont été données par le participant :<br />
+{ANSWERTABLE}]]></email_admin_responses>
+    <surveyls_numberformat><![CDATA[0]]></surveyls_numberformat>
+   </row>
+  </rows>
+ </surveys_languagesettings>
+</document>
