@@ -193,6 +193,8 @@ function preloadImages() {
 }
 
 function step_01(i) {
+	// Hide all questions
+	$('div[id^="question"]').hide();
 	// Add 2 circles paths from easy level and less than 50 (ie. 040)
 	aRoundImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess.pop() + '.BMP');
 	aRoundImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess.pop() + '.BMP');
