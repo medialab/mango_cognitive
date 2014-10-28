@@ -8,7 +8,7 @@ var aKeys               = [115, 108];
 // Sleep duration between steps
 var iWait01             = 500;
 var iWait02             = 500;
-var iWait03             = 1000;
+var iWait03             = 100;
 var iWait04             = 3000;
 var iWait05             = 1750;
 
