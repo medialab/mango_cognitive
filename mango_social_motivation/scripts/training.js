@@ -214,7 +214,7 @@ $(document).ready(
         // Rewarded line, 0 means short line, 1 means long line
         iRewardedLine = Math.floor(Math.random() * 2);
         // Randomly sort the array of videos
-        aVideos.sort(Math.round(Math.random()) - 0.5);
+        aVideos.sort(function() {return Math.round(Math.random() * 2) - 1});
         async.series({
             // Preload all medias
             one: function(callback) {

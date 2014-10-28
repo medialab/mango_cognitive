@@ -169,7 +169,6 @@ function cycle() {
     async.series({
         // Hide image and display fixing cross
         one: function(callback) {
-            console.log(i);
             hideImage();
             hideVideo();
             $('.socialmotivation .cross').css('visibility', 'visible');
