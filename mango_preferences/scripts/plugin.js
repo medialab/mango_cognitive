@@ -221,6 +221,8 @@ function step03(i) {
 }
 
 $(document).ready(function() {
+	// Hide the answers array
+	$('.array-multi-flexi-text .question').hide();
 	// Set default values
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').val('-1');
 	$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00usergroup > input[type="text"]').removeClass('empty');

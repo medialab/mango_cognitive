@@ -206,6 +206,8 @@ function step_05(i) {
 }
 
 $(document).ready(function() {
+	// Hide the answers array
+	$('.array-multi-flexi-text .question').hide();
 	// Get the survey language
 	sLang = $('html').attr('lang');
 	// Get the survey ID
