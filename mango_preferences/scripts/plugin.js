@@ -245,6 +245,8 @@ $(document).ready(function() {
 	} else {
 		aImages 	= aImagesEven;
 	}
+	// Randomly sort the array of images
+    aImages.sort(function() {return Math.round(Math.random() * 2) - 1});
 	// Preload all the images into cache
 	preloadImages(aImages, 0);
 });
