@@ -13,8 +13,10 @@ var iWait04             = 3000;
 var iWait05             = 1750;
 
 // Experiment configuration
-var iNumberOfIteration  = 70;
+var iNumberOfIteration  = 35;
+var iNumberOfSession    = 2;
 var i                   = 0;
+var j                   = 1;
 
 // Set path to fear images
 var sPluginPath         = 'mango/mango_social_motivation/';
@@ -169,6 +171,8 @@ function exit() {
 }
 
 function cycle() {
+    // Unbind event on keypress
+    $(document).unbind('keypress');
     async.series({
         // Hide image and display fixing cross
         one: function(callback) {
@@ -208,8 +212,24 @@ function cycle() {
                     if(i < iNumberOfIteration) {
                         cycle();
                     } else {
-                        callback(null);
-                        exit();
+                        if(j < iNumberOfSession) {
+                            j++;
+                            i = 0;
+                            // Hide image and video
+                            hideImage();
+                            hideVideo();
+                            // Display break message
+                            $('.break').show();
+                            $(document).bind('keypress', function(event) {
+                                if(event.which == 32) {
+                                    $('.break').hide();
+                                    cycle();
+                                }
+                            });
+                        } else {
+                            callback(null);
+                            exit();
+                        }
                     }
                 },
                 iWait05
@@ -220,6 +240,8 @@ function cycle() {
 
 $(document).ready(
     function() {
+        // Hide break message
+        $('.break').hide();
         // Rewarded line, 0 means short line, 1 means long line
         iRewardedLine = Math.floor(Math.random() * 2);
         // Set rewarded_line answer
