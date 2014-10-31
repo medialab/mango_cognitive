@@ -14,7 +14,8 @@ var sPluginPath		= 'mango/mango_fear/';
 var sImagesPath		= sPluginPath + 'images/';
 
 // Initialize variables
-var aImages			= ['M20_R_A3.png', 'M20_R_F5.png', 'F19_D_A7.png', 'F19_D_F5.png', 'M20_D_A5.png', 'F19_D_A3.png', 'M20_D_F7.png', 'M20_D_A1.png', 'F19_L_A5.png', 'M20_L_F1.png', 'M20_D_F3.png', 'M20_L_A7.png', 'F19_R_A1.png', 'F19_D_F1.png', 'F19_L_F3.png', 'F19_R_F7.png'];
+// var aImages			= ['M20_R_A3.png', 'M20_R_F5.png', 'F19_D_A7.png', 'F19_D_F5.png', 'M20_D_A5.png', 'F19_D_A3.png', 'M20_D_F7.png', 'M20_D_A1.png', 'F19_L_A5.png', 'M20_L_F1.png', 'M20_D_F3.png', 'M20_L_A7.png', 'F19_R_A1.png', 'F19_D_F1.png', 'F19_L_F3.png', 'F19_R_F7.png'];
+var aImages			= ['M20_R_A3.png', 'F19_L_F3.png',  'M20_D_F5.png', 'F19_R_A5.png', 'M20_D_A7.png', 'F19_D_F5.png', 'M20_L_F3.png', 'F19_D_A7.png'];
 var iTimeout		= 0;
 var iCounter		= 0;
 var iScore			= 0;
