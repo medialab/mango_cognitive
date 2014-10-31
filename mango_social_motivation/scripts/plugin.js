@@ -147,9 +147,9 @@ function displayReward(iRewardedLine, iChosenImage, iUserResponse, i) {
     // Check if the user response is correct
     // Touche S = 115 = short line
     // Touche L = 108 = long line
-    // If response is not correct display nothing
-    // Else if response is correct
+    // If response is correct
     if(((iUserResponse == 115) && (iChosenImage == 0)) || ((iUserResponse == 108) && (iChosenImage == 1))) {
+        $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00correct > input[type="text"]').val('1');
         var rewardedScore = Math.floor(Math.random() * 101);
         $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00rewardedscore > input[type="text"]').val(rewardedScore);
         // If correct response is the rewarded line
@@ -157,6 +157,9 @@ function displayReward(iRewardedLine, iChosenImage, iUserResponse, i) {
             $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00isrewarded > input[type="text"]').val(1);
             displayVideo(i);
         }
+    // Else if response is not correct display nothing
+    } else {
+        $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00correct > input[type="text"]').val('0');
     }
 }
 
@@ -183,6 +186,7 @@ function cycle() {
         // Display the chosen line
         three: function(callback) {
             iChosenImage = displayRandomLine(i);
+            iStartTimestamp = new Date().getTime();
             setTimeout(function() { callback(null); }, iWait03);
         },
         // Hide the chosen line and listen to user's interaction
@@ -195,6 +199,8 @@ function cycle() {
         // Don't listen to user interaction anymore and display the reward (if any)
         five: function(callback) {
             $(document).unbind('keypress');
+            iStopTimestamp = new Date().getTime();
+            $('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00delayanswer > input[type="text"]').val(iStopTimestamp - iStartTimestamp);
             displayReward(iRewardedLine, iChosenImage, iUserResponse, i);
             i++;
             setTimeout(
@@ -230,6 +236,10 @@ $(document).ready(
         $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00isrewarded > input[type="text"]').removeClass('empty');
         $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00videodisplayed > input[type="text"]').val('-1');
         $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00videodisplayed > input[type="text"]').removeClass('empty');
+        $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').val('-1');
+        $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').removeClass('empty');
+        $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
+        $('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').removeClass('empty');
         // Filter already displayed videos
         $('.diplayedvideos').text().split(',').forEach(
             function(key, index) {
