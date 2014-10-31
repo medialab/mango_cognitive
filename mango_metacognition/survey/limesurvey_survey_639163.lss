@@ -118,7 +118,7 @@
 <p>
 	<span style="display: block; text-align: center;"><img alt="Slider" src="mango/mango_metacognition/images/slider.png" width="50%" /></span></p>
 <p>
-	0% = pas du tout confiant(e) à 100% = tout à fait confiant(e).</p>
+	0% = pas du tout confiant(e) à 100% = tout à fait confiant(e). Par défaut le curseur est positionné au mileu de l'échelle, cependant pour choisir la <strong>réponse du milieu (50%)</strong>, vous devez <strong>cliquer</strong> sur le curseur.</p>
 <p>
 	<span style="color:#ff0000;"><strong>Attention ! Vous avez peu de temps pour indiquer vos réponses.</strong></span></p>
 <p>
@@ -167,7 +167,7 @@
     <gid><![CDATA[2169]]></gid>
     <type><![CDATA[X]]></type>
     <title><![CDATA[question03]]></title>
-    <question><![CDATA[La phase d'entraînement est terminée. Nous allons maintenant passer à la vraie phase du jeu. Cliquez sur le bouton Suivant quand vous serez prêt.]]></question>
+    <question><![CDATA[La phase d'entraînement est terminée. Nous allons maintenant passer à la vraie phase du jeu. Cliquez sur le bouton Suivant quand vous serez prêt(e).]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -3329,7 +3329,7 @@
   <rows>
    <row>
     <sid><![CDATA[639163]]></sid>
-    <admin><![CDATA[Anne L'Hôte]]></admin>
+    <admin><![CDATA[Groupement de Créateurs]]></admin>
     <adminemail><![CDATA[anne.lhote@gmail.com]]></adminemail>
     <anonymized><![CDATA[N]]></anonymized>
     <faxto/>
@@ -3337,15 +3337,15 @@
     <template><![CDATA[mango]]></template>
     <language><![CDATA[fr]]></language>
     <additional_languages/>
-    <datestamp><![CDATA[N]]></datestamp>
+    <datestamp><![CDATA[Y]]></datestamp>
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[Y]]></allowsave>
-    <autonumber_start><![CDATA[18]]></autonumber_start>
+    <autonumber_start><![CDATA[1]]></autonumber_start>
     <autoredirect><![CDATA[Y]]></autoredirect>
     <allowprev><![CDATA[N]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
-    <ipaddr><![CDATA[N]]></ipaddr>
+    <ipaddr><![CDATA[Y]]></ipaddr>
     <refurl><![CDATA[N]]></refurl>
     <publicstatistics><![CDATA[N]]></publicstatistics>
     <publicgraphs><![CDATA[N]]></publicgraphs>
@@ -3356,6 +3356,7 @@
     <usecaptcha><![CDATA[D]]></usecaptcha>
     <usetokens><![CDATA[N]]></usetokens>
     <bounce_email><![CDATA[anne.lhote@gmail.com]]></bounce_email>
+    <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
     <emailresponseto/>
     <tokenlength><![CDATA[15]]></tokenlength>
     <savetimings><![CDATA[Y]]></savetimings>
@@ -3365,14 +3366,14 @@
     <showqnumcode><![CDATA[X]]></showqnumcode>
     <bounceprocessing><![CDATA[N]]></bounceprocessing>
     <showwelcome><![CDATA[N]]></showwelcome>
-    <showprogress><![CDATA[Y]]></showprogress>
+    <showprogress><![CDATA[N]]></showprogress>
     <navigationdelay><![CDATA[0]]></navigationdelay>
     <nokeyboard><![CDATA[N]]></nokeyboard>
     <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
     <emailnotificationto/>
     <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
     <googleanalyticsapikey/>
-    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <sendconfirmation><![CDATA[N]]></sendconfirmation>
     <questionindex><![CDATA[0]]></questionindex>
    </row>
   </rows>
@@ -3409,10 +3410,10 @@
     <surveyls_survey_id><![CDATA[639163]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[GC - Jeu Meta Cognition]]></surveyls_title>
-    <surveyls_description/>
+    <surveyls_description><![CDATA[Jeu 2]]></surveyls_description>
     <surveyls_welcometext/>
     <surveyls_endtext/>
-    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_url><![CDATA[mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&lang={SURVEYLANGUAGE}&redirect]]></surveyls_url>
     <surveyls_urldescription/>
     <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
     <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},<br />

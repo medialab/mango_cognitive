@@ -226,16 +226,14 @@ $(document).ready(
 		);
 	}
 );
-</script>
-Lorsque vous fournirez une réponse correcte, on vous indiquera parfois que votre réponse était correcte.
+</script>Lorsque vous fournirez une réponse correcte, on vous indiquera parfois que votre réponse était correcte.
 <p>
-	Cette indication prendra la forme d'une personne vous manifestant son approbation.Aucune indication ne vous sera donnée pour les réponses incorrectes.</p>
+	Cette indication prendra la forme d'une personne vous manifestant son approbation. Aucune indication ne vous sera donnée pour les réponses incorrectes.</p>
 <p>
 	Notez que vous recevrez cette indication pour une partie de vos réponses seulement. La plupart du temps, aucune indication ne vous sera présentée.</p>
 <p>
 	Essayez s'il vous plaît de répondre le plus vite possible, mais en faisant le moins d'erreurs possible.</p>
-Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous pouvez appuyer sur la touche espace pour commencer la phase d'entraînement.
-]]></question>
+Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous pouvez appuyer sur la touche espace pour commencer la phase d'entraînement. ]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -294,12 +292,10 @@ $(document).ready(
 		);
 	}
 );
-</script>
-La phase d'entraînement est terminée !
+</script>La phase d'entraînement est terminée !
 <p>
-	Vous allez maintenant commencer la vraie tâche. La tâche est divisée en trois parties séparées par une pause L'ensemble de la tâche va durer environ 25 minutes.</p>
-Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous appuyez sur la touche espace !
-]]></question>
+	Vous allez maintenant commencer la vraie tâche. La tâche est divisée en trois parties séparées par une pause. L'ensemble de la tâche va durer environ 25 minutes.</p>
+Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'avez pas de question, vous appuyez sur la touche espace ! ]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -1423,6 +1419,34 @@ Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'av
     <scale_id><![CDATA[1]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
    </row>
+   <row>
+    <qid><![CDATA[9616]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2213]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[correct]]></title>
+    <question><![CDATA[correct]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[9132]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[9617]]></qid>
+    <sid><![CDATA[982922]]></sid>
+    <gid><![CDATA[2213]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[delayanswer]]></title>
+    <question><![CDATA[delay_answer]]></question>
+    <other><![CDATA[N]]></other>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[9132]]></parent_qid>
+    <scale_id><![CDATA[1]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
   </rows>
  </subquestions>
  <surveys>
@@ -1486,7 +1510,7 @@ Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'av
   <rows>
    <row>
     <sid><![CDATA[982922]]></sid>
-    <admin><![CDATA[Anne L'Hôte]]></admin>
+    <admin><![CDATA[Groupement de Créateurs]]></admin>
     <adminemail><![CDATA[anne.lhote@gmail.com]]></adminemail>
     <anonymized><![CDATA[N]]></anonymized>
     <faxto/>
@@ -1498,11 +1522,11 @@ Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'av
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[Y]]></allowsave>
-    <autonumber_start><![CDATA[5]]></autonumber_start>
+    <autonumber_start><![CDATA[35]]></autonumber_start>
     <autoredirect><![CDATA[Y]]></autoredirect>
     <allowprev><![CDATA[N]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
-    <ipaddr><![CDATA[N]]></ipaddr>
+    <ipaddr><![CDATA[Y]]></ipaddr>
     <refurl><![CDATA[N]]></refurl>
     <publicstatistics><![CDATA[N]]></publicstatistics>
     <publicgraphs><![CDATA[N]]></publicgraphs>
@@ -1516,21 +1540,21 @@ Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'av
     <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
     <emailresponseto/>
     <tokenlength><![CDATA[15]]></tokenlength>
-    <savetimings><![CDATA[N]]></savetimings>
+    <savetimings><![CDATA[Y]]></savetimings>
     <showxquestions><![CDATA[Y]]></showxquestions>
     <showgroupinfo><![CDATA[B]]></showgroupinfo>
     <shownoanswer><![CDATA[Y]]></shownoanswer>
     <showqnumcode><![CDATA[X]]></showqnumcode>
     <bounceprocessing><![CDATA[N]]></bounceprocessing>
     <showwelcome><![CDATA[N]]></showwelcome>
-    <showprogress><![CDATA[Y]]></showprogress>
+    <showprogress><![CDATA[N]]></showprogress>
     <navigationdelay><![CDATA[0]]></navigationdelay>
     <nokeyboard><![CDATA[N]]></nokeyboard>
     <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
     <emailnotificationto/>
     <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
     <googleanalyticsapikey/>
-    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <sendconfirmation><![CDATA[N]]></sendconfirmation>
     <questionindex><![CDATA[0]]></questionindex>
    </row>
   </rows>
@@ -1567,10 +1591,10 @@ Si vous avez des questions, n'hésitez pas à les poser maintenant. Si vous n'av
     <surveyls_survey_id><![CDATA[982922]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[GC - Jeu Motivation Sociale]]></surveyls_title>
-    <surveyls_description/>
+    <surveyls_description><![CDATA[Jeu 1]]></surveyls_description>
     <surveyls_welcometext/>
     <surveyls_endtext/>
-    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_url><![CDATA[mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&lang={SURVEYLANGUAGE}&redirect]]></surveyls_url>
     <surveyls_urldescription/>
     <surveyls_email_invite_subj><![CDATA[Invitation à participer à un questionnaire]]></surveyls_email_invite_subj>
     <surveyls_email_invite><![CDATA[Cher(e) {FIRSTNAME},<br />

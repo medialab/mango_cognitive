@@ -57,6 +57,16 @@
     <randomization_group/>
     <grelevance/>
    </row>
+   <row>
+    <gid><![CDATA[2269]]></gid>
+    <sid><![CDATA[948898]]></sid>
+    <group_name><![CDATA[Fin]]></group_name>
+    <group_order><![CDATA[4]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
   </rows>
  </groups>
  <questions>
@@ -174,7 +184,11 @@ $(document).ready(
 );
 </script>
 <p>
-	Vous allez maintenant commencer le jeu. Le jeu durera 4 minutes. Posez vos index sur la touche S et sur la touche L. Lorsque vous êtes prêt à commencer le jeu, appuyez sur la touche "Espace".</p>
+	Vous allez maintenant commencer la tâche. La tâche durera 4 minutes.</p>
+<p>
+	<strong>Gardez vos index sur la touche S et sur la touche L pendant toute la tâche. </strong></p>
+<p>
+	Lorsque vous êtes prêt à commencer, appuyez sur la touche "Espace".</p>
 ]]></question>
     <preg/>
     <help/>
@@ -222,15 +236,17 @@ $(document).ready(
 </script>
 <div id="mango_preferences_introduction">
 	<p>
-		Dans ce jeu, des visages vous seront présentés 2 par 2. A chaque fois, vous devrez indiquer pour quelle personne vous préféreriez voter dans une élection nationale.</p>
+		Dans cette tâche, des visages seront présentés 2 par 2.</p>
+	<p>
+		Vous devrez indiquer pour quelle personne vous préféreriez voter dans une élection nationale.</p>
 	<p>
 		Appuyez sur la touche S pour choisir la personne de gauche et sur la touche L pour choisir la personne de droite.</p>
 	<p>
-		Vous devez répondre <strong>en moins de 2 secondes</strong>. Si vous ne répondez pas assez vite, l'ordinateur passera automatiquement aux visages suivants.</p>
+		Vous devez répondre <strong>en moins de 2 secondes</strong>. Si vous ne répondez pas assez vite, l'ordinateur passera automatiquement aux visages suivants. Il n’y a pas de bonne ou de mauvaise réponse, vous devez répondre en suivant votre première impression.</p>
 	<p>
-		Il n’y a pas de bonne ou de mauvaise réponse, vous devez répondre en suivant votre première impression.</p>
+		&nbsp;</p>
 	<p>
-		Posez vos index sur la touche S et sur la touche L.</p>
+		Gardez vos index sur la touche S et sur la touche L pendant toute la tâche.</p>
 	<p style="text-align: center;">
 		&nbsp;</p>
 	<p class="warningjs">
@@ -239,6 +255,24 @@ $(document).ready(
 <p style="text-align: center;">
 	<img src="/mango/mango_preferences/images/preferences.jpg" width="250px" /></p>
 ]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[9593]]></qid>
+    <sid><![CDATA[948898]]></sid>
+    <gid><![CDATA[2269]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[question00]]></title>
+    <question><![CDATA[Bravo ! Vous avez terminé la Tâche 1. Passons maintenant au premier questionnaire.]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -276,7 +310,7 @@ $(document).ready(
     <qid><![CDATA[7973]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[1]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -290,7 +324,7 @@ $(document).ready(
     <qid><![CDATA[7974]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[usergroup]]></title>
     <question><![CDATA[user_group]]></question>
     <other><![CDATA[N]]></other>
@@ -304,7 +338,7 @@ $(document).ready(
     <qid><![CDATA[7975]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[2]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -318,7 +352,7 @@ $(document).ready(
     <qid><![CDATA[7976]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[3]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -332,7 +366,7 @@ $(document).ready(
     <qid><![CDATA[7977]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[4]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -346,7 +380,7 @@ $(document).ready(
     <qid><![CDATA[7978]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[5]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -360,7 +394,7 @@ $(document).ready(
     <qid><![CDATA[7979]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[6]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -374,7 +408,7 @@ $(document).ready(
     <qid><![CDATA[7980]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[7]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -388,7 +422,7 @@ $(document).ready(
     <qid><![CDATA[7981]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[8]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -402,7 +436,7 @@ $(document).ready(
     <qid><![CDATA[7982]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[9]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -416,7 +450,7 @@ $(document).ready(
     <qid><![CDATA[7983]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[10]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -430,7 +464,7 @@ $(document).ready(
     <qid><![CDATA[7984]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[11]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -444,7 +478,7 @@ $(document).ready(
     <qid><![CDATA[7985]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[12]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -458,7 +492,7 @@ $(document).ready(
     <qid><![CDATA[7986]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[13]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -472,7 +506,7 @@ $(document).ready(
     <qid><![CDATA[7987]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[14]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -486,7 +520,7 @@ $(document).ready(
     <qid><![CDATA[7988]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[15]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -500,7 +534,7 @@ $(document).ready(
     <qid><![CDATA[7989]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[16]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -514,7 +548,7 @@ $(document).ready(
     <qid><![CDATA[7990]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[17]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -528,7 +562,7 @@ $(document).ready(
     <qid><![CDATA[7991]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[18]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -542,7 +576,7 @@ $(document).ready(
     <qid><![CDATA[7992]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[19]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -556,7 +590,7 @@ $(document).ready(
     <qid><![CDATA[7993]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[20]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -570,7 +604,7 @@ $(document).ready(
     <qid><![CDATA[7994]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[21]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -584,7 +618,7 @@ $(document).ready(
     <qid><![CDATA[7995]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[22]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -598,7 +632,7 @@ $(document).ready(
     <qid><![CDATA[7996]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[23]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -612,7 +646,7 @@ $(document).ready(
     <qid><![CDATA[7997]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[24]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -626,7 +660,7 @@ $(document).ready(
     <qid><![CDATA[7998]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[25]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -640,7 +674,7 @@ $(document).ready(
     <qid><![CDATA[7999]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[26]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -654,7 +688,7 @@ $(document).ready(
     <qid><![CDATA[8000]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[27]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -668,7 +702,7 @@ $(document).ready(
     <qid><![CDATA[8001]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[28]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -682,7 +716,7 @@ $(document).ready(
     <qid><![CDATA[8002]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[29]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -696,7 +730,7 @@ $(document).ready(
     <qid><![CDATA[8003]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[30]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -710,7 +744,7 @@ $(document).ready(
     <qid><![CDATA[8004]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[31]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -724,7 +758,7 @@ $(document).ready(
     <qid><![CDATA[8005]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[32]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -738,7 +772,7 @@ $(document).ready(
     <qid><![CDATA[8006]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[33]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -752,7 +786,7 @@ $(document).ready(
     <qid><![CDATA[8007]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[34]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -766,7 +800,7 @@ $(document).ready(
     <qid><![CDATA[8008]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[35]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -780,7 +814,7 @@ $(document).ready(
     <qid><![CDATA[8009]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[36]]></title>
     <question/>
     <other><![CDATA[N]]></other>
@@ -794,7 +828,7 @@ $(document).ready(
     <qid><![CDATA[8010]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[touch]]></title>
     <question><![CDATA[touch]]></question>
     <other><![CDATA[N]]></other>
@@ -808,7 +842,7 @@ $(document).ready(
     <qid><![CDATA[8011]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[delayanswer]]></title>
     <question><![CDATA[delay_answer]]></question>
     <other><![CDATA[N]]></other>
@@ -822,7 +856,7 @@ $(document).ready(
     <qid><![CDATA[8012]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[leftimage]]></title>
     <question><![CDATA[left_image]]></question>
     <other><![CDATA[N]]></other>
@@ -836,7 +870,7 @@ $(document).ready(
     <qid><![CDATA[8013]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[rightimage]]></title>
     <question><![CDATA[right_image]]></question>
     <other><![CDATA[N]]></other>
@@ -850,7 +884,7 @@ $(document).ready(
     <qid><![CDATA[8062]]></qid>
     <sid><![CDATA[948898]]></sid>
     <gid><![CDATA[2074]]></gid>
-    <type><![CDATA[T]]></type>
+    <type><![CDATA[;]]></type>
     <title><![CDATA[correct]]></title>
     <question><![CDATA[correct]]></question>
     <other><![CDATA[N]]></other>
@@ -935,12 +969,12 @@ $(document).ready(
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[N]]></allowsave>
-    <autonumber_start><![CDATA[32]]></autonumber_start>
+    <autonumber_start><![CDATA[1]]></autonumber_start>
     <autoredirect><![CDATA[Y]]></autoredirect>
     <allowprev><![CDATA[N]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
-    <ipaddr><![CDATA[N]]></ipaddr>
-    <refurl><![CDATA[Y]]></refurl>
+    <ipaddr><![CDATA[Y]]></ipaddr>
+    <refurl><![CDATA[N]]></refurl>
     <publicstatistics><![CDATA[N]]></publicstatistics>
     <publicgraphs><![CDATA[N]]></publicgraphs>
     <listpublic><![CDATA[N]]></listpublic>
@@ -960,14 +994,14 @@ $(document).ready(
     <showqnumcode><![CDATA[X]]></showqnumcode>
     <bounceprocessing><![CDATA[N]]></bounceprocessing>
     <showwelcome><![CDATA[N]]></showwelcome>
-    <showprogress><![CDATA[Y]]></showprogress>
+    <showprogress><![CDATA[N]]></showprogress>
     <navigationdelay><![CDATA[0]]></navigationdelay>
     <nokeyboard><![CDATA[N]]></nokeyboard>
     <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
     <emailnotificationto/>
     <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
     <googleanalyticsapikey/>
-    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <sendconfirmation><![CDATA[N]]></sendconfirmation>
     <questionindex><![CDATA[0]]></questionindex>
    </row>
   </rows>
@@ -1007,7 +1041,7 @@ $(document).ready(
     <surveyls_description/>
     <surveyls_welcometext/>
     <surveyls_endtext/>
-    <surveyls_url><![CDATA[http://grebdioz.sciences-po.fr/mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&redirect]]></surveyls_url>
+    <surveyls_url><![CDATA[mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&lang={SURVEYLANGUAGE}&redirect]]></surveyls_url>
     <surveyls_urldescription/>
     <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
     <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},<br />
