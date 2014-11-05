@@ -3330,7 +3330,7 @@
    <row>
     <sid><![CDATA[639163]]></sid>
     <admin><![CDATA[Groupement de Créateurs]]></admin>
-    <adminemail><![CDATA[anne.lhote@gmail.com]]></adminemail>
+    <adminemail><![CDATA[jsultan@povertyactionlab.org]]></adminemail>
     <anonymized><![CDATA[N]]></anonymized>
     <faxto/>
     <format><![CDATA[G]]></format>
@@ -3355,7 +3355,7 @@
     <assessments><![CDATA[N]]></assessments>
     <usecaptcha><![CDATA[D]]></usecaptcha>
     <usetokens><![CDATA[N]]></usetokens>
-    <bounce_email><![CDATA[anne.lhote@gmail.com]]></bounce_email>
+    <bounce_email><![CDATA[jsultan@povertyactionlab.org]]></bounce_email>
     <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
     <emailresponseto/>
     <tokenlength><![CDATA[15]]></tokenlength>
