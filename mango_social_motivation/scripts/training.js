@@ -26,52 +26,52 @@ var SHORT_LINE_IMAGE    = 'short.bmp';
 var LONG_LINE_IMAGE     = 'long.bmp';
 var aImages             = new Array(CIRCLE_IMAGE, SHORT_LINE_IMAGE, LONG_LINE_IMAGE);
 var aVideos             = new Array(
-    'AFN3_approval.mp4', 
-    'AFN17_approval.mp4', 
-    'AFN21_approval.mp4', 
-    'AFN31_approval.mp4', 
-    'AFN35_approval.mp4', 
-    'AFN76_approval.mp4', 
-    'AFN98_approval.mp4', 
-    'AFW2_approval.mp4', 
-    'AFW5_approval.mp4', 
-    'AFW6_approval.mp4', 
-    'AFW7_approval.mp4', 
-    'AFW8_approval.mp4', 
-    'AFW12_approval.mp4', 
-    'AFW13_approval.mp4', 
-    'AFW14_approval.mp4', 
-    'AFW16_approval.mp4', 
-    'AFW19_approval.mp4', 
-    'AFW20_approval.mp4', 
-    'AFW25_approval.mp4', 
-    'AFW26_approval.mp4', 
-    'AFW28_approval.mp4', 
-    'AFW29_approval.mp4', 
-    'AFW30_approval.mp4', 
-    'AFW32_approval.mp4', 
-    'AFW34_approval.mp4', 
-    'AFW60_approval.mp4', 
-    'AFW62_approval.mp4', 
-    'AMN1_approval.mp4', 
-    'AMN9_approval.mp4', 
-    'AMN11_approval.mp4', 
-    'AMN15_approval.mp4', 
-    'AMN95_approval.mp4', 
-    'AMN96_approval.mp4', 
-    'AMN97_approval.mp4', 
-    'AMW10_approval.mp4', 
-    'AMW22_approval.mp4', 
-    'AMW23_approval.mp4', 
-    'AMW24_approval.mp4', 
-    'AMW27_approval.mp4', 
-    'AMW36_approval.mp4', 
-    'AMW42_approval.mp4', 
-    'AMW59_approval.mp4', 
-    'AMW61_approval.mp4', 
-    'AMW1014_approval.mp4'
+    'AFN3_approval', 
+    'AFN17_approval', 
+    'AFN21_approval', 
+    'AFN31_approval', 
+    'AFN35_approval', 
+    'AFN76_approval', 
+    'AFN98_approval', 
+    'AFW2_approval', 
+    'AFW5_approval', 
+    'AFW6_approval', 
+    'AFW7_approval', 
+    'AFW8_approval', 
+    'AFW12_approval', 
+    'AFW13_approval', 
+    'AFW14_approval', 
+    'AFW16_approval', 
+    'AFW19_approval', 
+    'AFW20_approval', 
+    'AFW25_approval', 
+    'AFW26_approval', 
+    'AFW28_approval', 
+    'AFW29_approval', 
+    'AFW30_approval', 
+    'AFW32_approval', 
+    'AFW34_approval', 
+    'AFW60_approval', 
+    'AFW62_approval', 
+    'AMN1_approval', 
+    'AMN9_approval', 
+    'AMN11_approval', 
+    'AMN15_approval', 
+    'AMN95_approval', 
+    'AMN96_approval', 
+    'AMN97_approval', 
+    'AMW10_approval', 
+    'AMW22_approval', 
+    'AMW23_approval', 
+    'AMW24_approval', 
+    'AMW27_approval', 
+    'AMW36_approval', 
+    'AMW42_approval', 
+    'AMW59_approval', 
+    'AMW61_approval', 
+    'AMW1014_approval'
 );
-var aMedias             = aImages.concat(aVideos);
+
 
 /*** FUNCTIONS ***/
 
@@ -93,24 +93,41 @@ function displayVideo() {
     sText = ($('.text-short input').val() == '' ? '' : ',') + sVideoName;
     $('.text-short input').val($('.text-short input').val() + sText);
     $('.lightbox video').show();
-    $('.lightbox video source').attr('src', sImagesPath + sVideoName);
+    $('.lightbox video source:eq(0)').attr('src', sImagesPath + sVideoName + '.mp4');
+    $('.lightbox video source:eq(1)').attr('src', sImagesPath + sVideoName + '.ogv');
     document.getElementById('video').load();
     document.getElementById('video').play();
 }
 
-function preloadMedias(aMedias) {
-    var length = aMedias.length - 1;
-    $.each(aMedias, function(index) {
-        (function(index) {
-            $.ajax({
-                url: sImagesPath + aMedias[index],
-            }).done(function() {
-                // If media loading finished, launch the game
-                if(index == length) {
-                    // step_01(0);
-                }
-            });
-        }(index));
+function preloadImages(aImages, callback) {
+    var iImagesLength   = aImages.length;
+    var iCounter        = 0;
+    $.each(aImages, function(index) {
+        $.ajax(sImagesPath + aImages[index]).done(function() {
+            iCounter++;
+            if(iCounter == iImagesLength) {
+                callback();
+            }
+        });
+    });
+}
+
+function preloadVideos(aVideos, callback) {
+    var iVideosLength   = aVideos.length * 2;
+    var iCounter        = 0;
+    $.each(aVideos, function(index) {
+        $.ajax(sImagesPath + aVideos[index] + '.mp4').done(function() {
+            iCounter++;
+            if(iCounter == iVideosLength) {
+                callback();
+            }
+        });
+        $.ajax(sImagesPath + aVideos[index] + '.ogv').done(function() {
+            iCounter++;
+            if(iCounter == iVideosLength) {
+                callback();
+            }
+        });
     });
 }
 
@@ -211,17 +228,22 @@ function cycle() {
 
 $(document).ready(
     function() {
+        // Display spinner for images loading
+        displayImage('spinner.gif');
         // Rewarded line, 0 means short line, 1 means long line
         iRewardedLine = Math.floor(Math.random() * 2);
         // Randomly sort the array of videos
         aVideos.sort(function() {return Math.round(Math.random() * 2) - 1});
         async.series({
-            // Preload all medias
+            // Preload videos
             one: function(callback) {
-                preloadMedias(aMedias);
-                callback();
+                preloadVideos(aVideos, callback);
             },
+            // Preload images
             two: function(callback) {
+                preloadImages(aImages, callback);
+            },
+            three: function(callback) {
                 cycle();
             }
         }, 
