@@ -27,7 +27,7 @@ var sImage 				= '';
 var sImagesPath			= 'mango/mango_metacognition/images/';
 var sContext			= 'training/';
 var sMessageReference	= 'Voici le cercle de référence.';
-var sMessageStart		= 'Attention c\'est parti!';
+var sMessageStart		= 'Attention c\'est parti !';
 var sMessageQuestion	= 'moins ? plus';
 var sMessageKeys		= '<div class="key">Moins = Clic gauche</div><div class="key">Plus = Clic droit</div>';
 var aImages				= new Array();

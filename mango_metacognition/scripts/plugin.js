@@ -35,7 +35,7 @@ var sImage 						= '';
 var sImagesPath					= 'mango/mango_metacognition/images/';
 var sContext					= 'experiment/';
 var sMessageReference			= 'Voici le cercle de référence.';
-var sMessageStart				= 'Attention c\'est parti!';
+var sMessageStart				= 'Attention c\'est parti !';
 var sMessageQuestion			= 'moins ? plus';
 
 
