@@ -82,8 +82,8 @@ function isAnswerCorrect() {
 }
 
 function displayScoreMessage() {
-	// Hide image
-	$('.fear img').attr('src', '');
+	// Remove image
+	$('.lightbox img').remove();
 	// Build sScoreMessage
 	var sScoreMessage = '<span class="next">' + sText_01[sLang] + iScore;
 	if(iScore > 1) {
@@ -152,8 +152,8 @@ function step_01() {
 		sScoreMessage = '<b>' + sText_06[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_05[sLang] + '</b> = ' + sText_08[sLang];
 	}
 	sScoreMessage += '<span class="next"><br/><br/>' + sText_09[sLang] + '</span>';
-	// Hide image
-	$('.fear img').attr('src', '');
+	// Remove image
+	$('.lightbox img').remove();
 	// Display this sScoreMessage
 	$('.fear .message').html(sScoreMessage).show();
 	$(document).keypress(
@@ -181,7 +181,8 @@ function step_02() {
 
 function step_03() {
 	// Display the fixing cross
-	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" /></div>');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -193,7 +194,8 @@ function step_04() {
 	aImage = aImages.splice(parseInt(Math.random() * aImages.length), 1);
 	oResponse.filename = aImage[0];
 	// Display the fear image
-	$('.lightbox img').attr('src', sImagesPath + aImage[0]);
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImage[0] + '" /></div>');
 	// Got to next step
 	iTimeout = setTimeout(function() {step_05()}, iWait03);
 	// Start listening on user interactions
@@ -202,7 +204,8 @@ function step_04() {
 
 function step_05() {
 	// Display the white mask
-	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" /></div>');
 	iTimeout = setTimeout(function() {saveAnswer()}, iWait04);
 }
 
@@ -210,7 +213,8 @@ $(document).ready(function() {
 	// Get the survey language
 	sLang = $('html').attr('lang');
 	// Display the spinner
-	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" /></div>');
 	// Display Loading message
 	$('.fear .message').html(sText_10[sLang]).show();
 	// Preload all the images into cache

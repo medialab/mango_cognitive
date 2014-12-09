@@ -127,8 +127,8 @@ function exit() {
 }
 
 function displayScoreMessage(middle) {
-	// Hide image
-	$('.fear img').attr('src', '');
+	// Remove image
+	$('.lightbox img').remove();
 	// Build sScoreMessage
 	var sScoreMessage = '<span class="next">' + sText_01[sLang] + iScore;
 	if(iScore > 1) {
@@ -154,8 +154,8 @@ function displayScoreMessage(middle) {
 }
 
 function step_01() {
-	// Display image
-	$('.lightbox img').attr('src', '').show();
+	// Remove image
+	$('.lightbox img').remove();
 	// If the user token is odd
 	if(sToken % 2) {
 		sScoreMessage = '<b>' + sText_05[sLang] + '</b> = ' + sText_07[sLang] + '<div class="space" /><b>' + sText_06[sLang] + '</b> = ' + sText_08[sLang] + '<br/><br/>';
@@ -181,7 +181,8 @@ function step_02(i) {
 
 function step_03(i) {
 	// Display the fixing cross
-	$('.lightbox img').attr('src', sImagesPath + 'mask_fixingcross.png');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" /></div>');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -190,7 +191,8 @@ function step_03(i) {
 
 function step_04(i) {
 	// Display the fear image
-	$('.lightbox img').attr('src', sImagesPath + aImages[i]);
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImages[i] + '" /></div>');
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00filename > input[type="text"]').val(aImages[i]);
 	// Got to next step
 	iTimeout = setTimeout(function() {step_05(i)}, iWait03);
@@ -201,7 +203,8 @@ function step_04(i) {
 
 function step_05(i) {
 	// Display the white mask
-	$('.lightbox img').attr('src', sImagesPath + 'mask.png');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" /></div>');
 	iTimeout = setTimeout(function() {saveAnswer(i)}, iWait04);
 }
 
@@ -215,7 +218,8 @@ $(document).ready(function() {
 	// Get current user token
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// Display the spinner
-	$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+	$('.lightbox img').remove();
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" /></div>');
 	// Display Loading message
 	$('.fear .message').html(sText_10[sLang]).show();
 	// Set default values
@@ -254,9 +258,7 @@ $(document).ready(function() {
 			$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00windowdimensions > input[type="text"]').val(document.body.clientWidth + ' x ' + document.body.clientHeight);
 			// Preload all the images into cache before launching the game
 			aImages			= oResult.images;
-			var imageObj	= new Image();
 			var length 		= aImages.length - 1;
-			var tmp 		= 0;
 			$.each(aImages, function(index) {
 				(function(index) {
 					$.ajax({
