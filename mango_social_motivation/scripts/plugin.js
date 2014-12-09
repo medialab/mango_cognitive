@@ -303,6 +303,8 @@ $(document).ready(
                 }
             }
         );
+        // Randomly sort the array of videos
+        aVideos.sort(function() {return Math.round(Math.random() * 2) - 1});
         aVideosTmp = aVideos.slice(0);
         async.series({
             // Preload videos
