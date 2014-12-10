@@ -266,6 +266,8 @@ function cycle() {
                             j++;
                             i = 0;
                             aVideosTmp = aVideos.slice(0);
+                            // Randomly sort the array of videos
+                            aVideosTmp.sort(function() {return Math.round(Math.random() * 2) - 1});
                             $(document).bind('keypress', function(event) {
                                 if(event.which == 32) {
                                     $('.break').hide();
@@ -295,7 +297,7 @@ $(document).ready(
         // Randomnly choose the line to be rewarded
         sRewardedLine       = ((Math.floor(Math.random() * 2) ==  0) ? SHORT_LINE_IMAGE : LONG_LINE_IMAGE);
         // Filter already displayed videos
-        $('.diplayedvideos').text().split(',').forEach(
+        $('.diplayedvideos').text().replace('\n\t', '').split(',').forEach(
             function(key, index) {
                 if(key != '') {
                     iVideoIndex = aVideos.indexOf(key);
@@ -303,9 +305,9 @@ $(document).ready(
                 }
             }
         );
-        // Randomly sort the array of videos
-        aVideos.sort(function() {return Math.round(Math.random() * 2) - 1});
         aVideosTmp = aVideos.slice(0);
+        // Randomly sort the array of videos
+        aVideosTmp.sort(function() {return Math.round(Math.random() * 2) - 1});
         async.series({
             // Preload videos
             one: function(callback) {
