@@ -114,12 +114,12 @@ $(document).ready(
 		$(document).keypress(
 			function(event) {
 				// Detect S keypress
-				if((event.which == 115) && (step == 1)) {
+				if(((event.which == 115) || (event.which == 83)) && (step == 1)) {
 					step++;
 					$('#mango_social_motivation').append('<p class="warningjs"><strong>Bravo ! Appuyez maintenant sur la touche L.</strong></p>');
 				}
 				// Detect L keypress
-				if((event.which == 108) && (step == 2)) {
+				if(((event.which == 108) || (event.which == 76)) && (step == 2)) {
 					step++;
 					$('#mango_social_motivation').append('<p class="warningjs"><strong>Bravo ! Lorsque vous êtes prêt(e) à voir des exemples, appuyez sur la touche Espace.</strong></p>');
 				}
@@ -133,7 +133,10 @@ $(document).ready(
 );
 </script>
 <div id="mango_social_motivation">
-	Dans cette expérience, vous allez voir une croix apparaître au centre de l'écran. Veuillez s'il vous plaît regarder la croix jusqu'à ce qu'un cercle apparaisse.
+	<p>
+		Maintenant, vous allez entamer le dernier jeu de cette enquête. A l'issue de ce dernier jeu, votre participation sera validée et vous pourrez recevoir votre indeminisation.</p>
+	<p>
+		Dans ce jeu, vous allez voir une croix apparaître au centre de l'écran. Veuillez s'il vous plaît regarder la croix jusqu'à ce qu'un cercle apparaisse.</p>
 	<p>
 		Vous verrez ensuite une ligne apparaître dans le cercle. Cette ligne peut être courte ou longue.</p>
 	<p>
@@ -506,7 +509,7 @@ $(document).ready(
     <surveyls_survey_id><![CDATA[982922]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[GC - Jeu Motivation Sociale]]></surveyls_title>
-    <surveyls_description><![CDATA[Jeu 1]]></surveyls_description>
+    <surveyls_description><![CDATA[Jeu 3]]></surveyls_description>
     <surveyls_welcometext/>
     <surveyls_endtext/>
     <surveyls_url><![CDATA[mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&lang={SURVEYLANGUAGE}&redirect]]></surveyls_url>

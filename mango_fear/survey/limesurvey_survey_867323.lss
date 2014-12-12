@@ -30,7 +30,7 @@
    <row>
     <gid><![CDATA[2073]]></gid>
     <sid><![CDATA[867323]]></sid>
-    <group_name><![CDATA[Entrainement]]></group_name>
+    <group_name><![CDATA[Entraînement]]></group_name>
     <group_order><![CDATA[1]]></group_order>
     <description/>
     <language><![CDATA[fr]]></language>
@@ -150,12 +150,12 @@ $(document).ready(
 		$(document).keypress(
 			function(event) {
 				// Detect S keypress
-				if((event.which == 115) && (step == 1)) {
+				if(((event.which == 115) || (event.which == 83)) && (step == 1)) {
 					step++;
 					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez maintenant sur la touche L.</strong></p>');
 				}
 				// Detect L keypress
-				if((event.which == 108) && (step == 2)) {
+				if(((event.which == 108) || (event.which == 76)) && (step == 2)) {
 					step++;
 					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Lorsque vous êtes prêt à voir des exemples, appuyez sur la touche Espace.</strong></p>');
 				}
@@ -172,13 +172,15 @@ $(document).ready(
 	<p>
 		Dans cette tâche, des visages vont seront à nouveau présentés. Cette fois, les visages exprimeront soit de la colère soit de la peur.</p>
 	<p>
-		<u><strong>Attention:</strong></u> les visages disparaissent plus rapidement que dans la tâche précédente.</p>
+		<span style="color:#ff0000;"><u><strong>Attention:</strong></u> les visages disparaissent plus rapidement que dans la tâche précédente.</span></p>
 	<p>
-		Vous devrez décider si le visage présenté exprime de la colère ou de la peur. <strong>Vous aurez 2 secondes pour répondre.</strong> Vos scores vous seront donnés régulièrement.</p>
+		<strong>Vous devrez décider si le visage présenté exprime de la colère ou de la peur</strong>.</p>
+	<p>
+		<strong>Vous aurez 2 secondes pour répondre.</strong> Vos scores vous seront donnés régulièrement.</p>
 	<p>
 		C'est parfois difficile mais vous devez répondre même si vous n'êtes pas sûr(e) de vous. Vous commencerez par un petit entraînement pour vous habituer à la tâche.<strong> </strong></p>
 	<p>
-		Pendant toute la durée du jeu, <strong>fixez bien le point </strong>qui apparaît au centre de l'écran avant chaque visage et <strong>gardez vos index sur la touche S et sur la touche L</strong>.</p>
+		Pendant toute la durée du jeu, <strong>fixez bien le point </strong>qui apparaît au centre de l'écran avant chaque visage et <strong>gardez vos index au dessus de la touche S et de la touche L</strong>.</p>
 	<p class="warningjs">
 		<strong>Appuyez maintenant sur la touche S.</strong></p>
 </div>
@@ -221,7 +223,7 @@ $(document).ready(
 <p>
 	La tâche va commencer ! Pendant la tâche, votre score ne vous sera donné qu'une seule fois. La tâche dure à peu près 6-7 minutes. Posez vos index sur la touche S et sur la touche L.</p>
 <p>
-	<b>Gardez bien en mémoire quelle touche correspond à quelle réponse, car vous ne verrez plus les correspondances pendant la tâche.</b></p>
+	Nous allons vous rappeler à quelles émotions correspondent les touches S et L sur l'écran suivant.<b> Attention la correspondance touche/emotion n'apparaitra pas pendant la tâche, donc gardez bien en mémoire quelle touche correspond à quelle réponse.</b></p>
 <p>
 	Lorsque vous êtes prêt(e) à commencer, appuyez sur la touche "Espace".</p>
 ]]></question>
@@ -242,10 +244,9 @@ $(document).ready(
     <gid><![CDATA[2270]]></gid>
     <type><![CDATA[X]]></type>
     <title><![CDATA[question00]]></title>
-    <question><![CDATA[<p>
-	Bravo ! Vous avez terminé la Tâche 2.</p>
+    <question><![CDATA[Bravo ! Vous avez terminé la Tâche 1.
 <p>
-	Vous allez maintenant remplir un dernier questionnaire. Une fois ce questionnaire rempli, la Session 1 sera terminée !</p>
+	Vous allez passer à la Tâche 2</p>
 ]]></question>
     <preg/>
     <help/>

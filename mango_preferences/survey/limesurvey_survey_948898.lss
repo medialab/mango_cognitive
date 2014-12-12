@@ -30,7 +30,7 @@
    <row>
     <gid><![CDATA[2140]]></gid>
     <sid><![CDATA[948898]]></sid>
-    <group_name><![CDATA[Entrainement]]></group_name>
+    <group_name><![CDATA[Entraînement]]></group_name>
     <group_order><![CDATA[1]]></group_order>
     <description/>
     <language><![CDATA[fr]]></language>
@@ -186,7 +186,7 @@ $(document).ready(
 <p>
 	Vous allez maintenant commencer la tâche. La tâche durera 4 minutes.</p>
 <p>
-	<strong>Gardez vos index sur la touche S et sur la touche L pendant toute la tâche. </strong></p>
+	<strong>Gardez vos index au-dessus des touches S et L pendant toute la tâche. </strong></p>
 <p>
 	Lorsque vous êtes prêt à commencer, appuyez sur la touche "Espace".</p>
 ]]></question>
@@ -216,12 +216,12 @@ $(document).ready(
 		$(document).keypress(
 			function(event) {
 				// Detect S keypress
-				if((event.which == 115) && (step == 1)) {
+				if(((event.which == 115) || (event.which == 83)) && (step == 1)) {
 					step++;
 					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez maintenant sur la touche L.</strong></p>');
 				}
 				// Detect L keypress
-				if((event.which == 108) && (step == 2)) {
+				if(((event.which == 108) || (event.which == 76)) && (step == 2)) {
 					step++;
 					$('#mango_preferences_introduction').append('<p class="warningjs"><strong>Bravo! Appuyez sur la touche Espace pour commencer l\'entraînement !</strong></p>');
 				}
@@ -246,7 +246,7 @@ $(document).ready(
 	<p>
 		&nbsp;</p>
 	<p>
-		Gardez vos index sur la touche S et sur la touche L pendant toute la tâche.</p>
+		Gardez vos index au-dessus des touches S et L pendant toute la tâche.</p>
 	<p style="text-align: center;">
 		&nbsp;</p>
 	<p class="warningjs">
@@ -272,7 +272,7 @@ $(document).ready(
     <gid><![CDATA[2269]]></gid>
     <type><![CDATA[X]]></type>
     <title><![CDATA[question00]]></title>
-    <question><![CDATA[Bravo ! Vous avez terminé la Tâche 1. Passons maintenant au premier questionnaire.]]></question>
+    <question><![CDATA[Bravo ! Vous avez terminé la Tâche 2. Vous allez maintenant remplir un dernier questionnaire. Une fois ce questionnaire rempli, la Session 1 sera terminée !]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>

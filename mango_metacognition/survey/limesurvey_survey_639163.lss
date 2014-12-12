@@ -85,11 +85,11 @@
     <gid><![CDATA[2166]]></gid>
     <type><![CDATA[;]]></type>
     <title><![CDATA[question04a]]></title>
-    <question><![CDATA[<span class="trainingReference">{INSERTANS:639163X2168X8194}</span> <script type="text/javascript" src="mango/mango_metacognition/scripts/plugin.js"></script>
+    <question><![CDATA[<span class="trainingReference">{INSERTANS:639163X2168X8194}</span><script type="text/javascript" src="mango/mango_metacognition/scripts/async.js"></script><script type="text/javascript" src="mango/mango_metacognition/scripts/plugin.js"></script>
 <div class="lightbox black metacognition">
 	<p class="text screencentered">
 		&nbsp;</p>
-	<img alt="" class="image screencentered" src="" />
+	<img alt="" class="image screencentered" src="mango/mango_metacognition/images/spinner.gif" />
 	<p class="question screencentered">
 		&nbsp;</p>
 </div>
@@ -112,17 +112,19 @@
     <type><![CDATA[X]]></type>
     <title><![CDATA[question01]]></title>
     <question><![CDATA[<p>
+	Vous allez débuter le premier jeu de cette enquête. Celui-ci dure en moyenne cinq minutes.</p>
+<p>
 	Des cercles contenant des points vont apparaître brièvement au centre de l'écran. Après la présentation de chaque cercle, vous devrez indiquer aussi <strong>rapidement</strong> et <strong>correctement</strong> que possible si celui-ci contient MOINS (bouton gauche de la souris ou du touchpad) ou PLUS (bouton droit de la souris ou du touchpad) de points qu’un le cercle de référence. Le cercle de référence vous sera présenté régulièrement au cours de l'expérience.</p>
 <p>
 	Ensuite, il vous sera demandé d'estimer votre niveau de confiance dans votre réponse. Pour cela, vous déplacerez le curseur de l'échelle (voir ci-dessous), à l’aide de la souris, jusqu'au niveau de confiance souhaité :</p>
 <p>
 	<span style="display: block; text-align: center;"><img alt="Slider" src="mango/mango_metacognition/images/slider.png" width="50%" /></span></p>
 <p>
-	0% = pas du tout confiant(e) à 100% = tout à fait confiant(e). Par défaut le curseur est positionné au mileu de l'échelle, cependant pour choisir la <strong>réponse du milieu (50%)</strong>, vous devez <strong>cliquer</strong> sur le curseur.</p>
+	0% = pas du tout confiant(e) à 100% = tout à fait confiant(e). Par défaut le curseur est positionné au début de l'échelle, cependant pour choisir la <strong>réponse du début (0%)</strong>, vous devez <strong>cliquer</strong> sur le curseur.</p>
 <p>
 	<span style="color:#ff0000;"><strong>Attention ! Vous avez peu de temps pour indiquer vos réponses.</strong></span></p>
 <p>
-	Vous allez commencer par une phase de test. Merci de cliquer sur le bouton Suivant quand vous serez prêt(e).</p>
+	Vous allez commencer par une phase d'entraînement. Merci de cliquer sur le bouton Suivant quand vous serez prêt(e).</p>
 ]]></question>
     <preg/>
     <help/>
@@ -141,12 +143,12 @@
     <gid><![CDATA[2168]]></gid>
     <type><![CDATA[N]]></type>
     <title><![CDATA[question02a]]></title>
-    <question><![CDATA[<script type="text/javascript" src="mango/mango_metacognition/scripts/training.js"></script>
+    <question><![CDATA[<script type="text/javascript" src="mango/mango_metacognition/scripts/async.js"></script><script type="text/javascript" src="mango/mango_metacognition/scripts/training.js"></script>
 <div class="lightbox black metacognition">
 	<p class="text screencentered">
 		&nbsp;</p>
-	<img alt="" class="image screencentered" src="" />
-        <p class="question screencentered">
+	<img alt="" class="image screencentered" src="mango/mango_metacognition/images/spinner.gif" />
+	<p class="question screencentered">
 		&nbsp;</p>
 </div>
 ]]></question>
@@ -2113,11 +2115,6 @@
    </row>
    <row>
     <qid><![CDATA[8196]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8196]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2143,11 +2140,6 @@
    </row>
    <row>
     <qid><![CDATA[8197]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8197]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2173,11 +2165,6 @@
    </row>
    <row>
     <qid><![CDATA[8198]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8198]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2203,11 +2190,6 @@
    </row>
    <row>
     <qid><![CDATA[8199]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8199]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2233,11 +2215,6 @@
    </row>
    <row>
     <qid><![CDATA[8200]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8200]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2263,11 +2240,6 @@
    </row>
    <row>
     <qid><![CDATA[8201]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8201]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2293,11 +2265,6 @@
    </row>
    <row>
     <qid><![CDATA[8202]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[8202]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2323,11 +2290,6 @@
    </row>
    <row>
     <qid><![CDATA[9059]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9059]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2353,11 +2315,6 @@
    </row>
    <row>
     <qid><![CDATA[9061]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9061]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2383,11 +2340,6 @@
    </row>
    <row>
     <qid><![CDATA[9063]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9063]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2413,11 +2365,6 @@
    </row>
    <row>
     <qid><![CDATA[9065]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9065]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2443,11 +2390,6 @@
    </row>
    <row>
     <qid><![CDATA[9067]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9067]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2473,11 +2415,6 @@
    </row>
    <row>
     <qid><![CDATA[9069]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9069]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2503,11 +2440,6 @@
    </row>
    <row>
     <qid><![CDATA[9071]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9071]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2533,11 +2465,6 @@
    </row>
    <row>
     <qid><![CDATA[9073]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9073]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2563,11 +2490,6 @@
    </row>
    <row>
     <qid><![CDATA[9075]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9075]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2593,11 +2515,6 @@
    </row>
    <row>
     <qid><![CDATA[9077]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9077]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2623,11 +2540,6 @@
    </row>
    <row>
     <qid><![CDATA[9079]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9079]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2653,11 +2565,6 @@
    </row>
    <row>
     <qid><![CDATA[9081]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9081]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2683,11 +2590,6 @@
    </row>
    <row>
     <qid><![CDATA[9083]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9083]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2713,11 +2615,6 @@
    </row>
    <row>
     <qid><![CDATA[9085]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9085]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2743,11 +2640,6 @@
    </row>
    <row>
     <qid><![CDATA[9087]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9087]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2773,11 +2665,6 @@
    </row>
    <row>
     <qid><![CDATA[9089]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9089]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2803,11 +2690,6 @@
    </row>
    <row>
     <qid><![CDATA[9091]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9091]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2833,11 +2715,6 @@
    </row>
    <row>
     <qid><![CDATA[9093]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9093]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2863,11 +2740,6 @@
    </row>
    <row>
     <qid><![CDATA[9095]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9095]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2893,11 +2765,6 @@
    </row>
    <row>
     <qid><![CDATA[9097]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9097]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2923,11 +2790,6 @@
    </row>
    <row>
     <qid><![CDATA[9099]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9099]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2953,11 +2815,6 @@
    </row>
    <row>
     <qid><![CDATA[9101]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9101]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -2983,11 +2840,6 @@
    </row>
    <row>
     <qid><![CDATA[9103]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9103]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3013,11 +2865,6 @@
    </row>
    <row>
     <qid><![CDATA[9105]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9105]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3043,11 +2890,6 @@
    </row>
    <row>
     <qid><![CDATA[9107]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9107]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3073,11 +2915,6 @@
    </row>
    <row>
     <qid><![CDATA[9109]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9109]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3103,11 +2940,6 @@
    </row>
    <row>
     <qid><![CDATA[9111]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9111]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3133,11 +2965,6 @@
    </row>
    <row>
     <qid><![CDATA[9113]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9113]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3163,11 +2990,6 @@
    </row>
    <row>
     <qid><![CDATA[9115]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9115]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3193,11 +3015,6 @@
    </row>
    <row>
     <qid><![CDATA[9117]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9117]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3223,11 +3040,6 @@
    </row>
    <row>
     <qid><![CDATA[9119]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9119]]></qid>
     <attribute><![CDATA[slider_min]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -3250,11 +3062,6 @@
     <qid><![CDATA[9121]]></qid>
     <attribute><![CDATA[slider_max]]></attribute>
     <value><![CDATA[100]]></value>
-   </row>
-   <row>
-    <qid><![CDATA[9121]]></qid>
-    <attribute><![CDATA[slider_middlestart]]></attribute>
-    <value><![CDATA[1]]></value>
    </row>
    <row>
     <qid><![CDATA[9121]]></qid>
@@ -3341,7 +3148,7 @@
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[Y]]></allowsave>
-    <autonumber_start><![CDATA[1]]></autonumber_start>
+    <autonumber_start><![CDATA[35]]></autonumber_start>
     <autoredirect><![CDATA[Y]]></autoredirect>
     <allowprev><![CDATA[N]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
@@ -3410,7 +3217,7 @@
     <surveyls_survey_id><![CDATA[639163]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[GC - Jeu Meta Cognition]]></surveyls_title>
-    <surveyls_description><![CDATA[Jeu 2]]></surveyls_description>
+    <surveyls_description><![CDATA[Jeu 1]]></surveyls_description>
     <surveyls_welcometext/>
     <surveyls_endtext/>
     <surveyls_url><![CDATA[mango/mango_surveys_router/services/plugin.php?token={TOKEN}&sid={SID}&lang={SURVEYLANGUAGE}&redirect]]></surveyls_url>
