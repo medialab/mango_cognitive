@@ -119,7 +119,8 @@ function setAnswer(sAnswer, step) {
 function step_01(i) {
 	// Display the reference disc
 	$('.lightbox .text').html(sMessageReference);
-	$('.lightbox .image').attr('src', aImages[0]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[0] + '" />');
 	// Got to next step
 	setTimeout(function() {step_02(i)}, iWait01);
 }
@@ -127,7 +128,8 @@ function step_01(i) {
 function step_02(i) {
 	// Display blank image
 	$('.lightbox .text').html('');
-	$('.lightbox .image').attr('src', aImages[1]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[1] + '" />');
 	// Got to next step
 	setTimeout(function() {step_03(i)}, iWait02);
 }
@@ -142,7 +144,8 @@ function step_03(i) {
 function step_04(i) {
 	// Display blank image
 	$('.lightbox .text').html(sMessageKeys);
-	$('.lightbox .image').attr('src', aImages[1]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[1] + '" />');
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Display lightbox
@@ -157,7 +160,8 @@ function step_04(i) {
 
 function step_05(i) {
 	// Display the fixing cross
-	$('.lightbox .image').attr('src', aImages[2]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[2] + '" />');
 	// Got to next step
 	setTimeout(function() {step_06(i)}, iWait05);
 }
@@ -167,7 +171,8 @@ function step_06(i) {
 	iStartTimestamp = new Date().getTime();
 	// Display the image
 	sImage = aImages[iImageIterator + 2];
-	$('.lightbox .image').attr('src', sImage);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + sImage + '" />');
 	// Set image name as answer
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + iImageIterator + ') > .answer_cell_00image > input[type="text"]').val(sImage);
 	// Got to next step
@@ -176,7 +181,8 @@ function step_06(i) {
 
 function step_07(i) {
 	// Display blank image
-	$('.lightbox .image').attr('src', aImages[1]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[1] + '" />');
 	// Start listening on user interactions
 	$(document).bind('click', {step: i}, onMouseClick);
 	$(document).bind('contextmenu', {step: i}, onMouseClick);
@@ -186,7 +192,7 @@ function step_07(i) {
 
 function step_08(i) {
 	// Display help message to answer
-	$('.lightbox .question').html(sMessageQuestion);
+	// $('.lightbox .question').html(sMessageQuestion);
 	// Got to next step
 	iTimeout = setTimeout(function() {step_09(i)}, iWait08);
 }
@@ -196,15 +202,15 @@ function step_09(i) {
 	$(document).unbind('click');
 	$(document).unbind('contextmenu');
 	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
-	$('.lightbox .question').html('');
+	// $('.lightbox .question').html('');
 	// Got to next step
 	setTimeout(function() {setAnswer('no_answer', i)}, iWait09);
 }
 
 function step_10(i) {
 	// Display nothing
-	$('.lightbox img').attr('src', '');
-	$('.lightbox .question').html('');
+	$('.lightbox .image').remove();
+	// $('.lightbox .question').html('');
 	$('.lightbox .text').html('');
 	// Hide all questions
 	$('div[id^="question"]').hide();
@@ -234,10 +240,9 @@ $(document).ready(
 	function() {
 		// Move lightbox outside of the question
 		$('.lightbox').appendTo('[id^="group-"]');
-		// Display spinner for images loading
-		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
+		// Display message for images loading
 		$('.lightbox img').css('padding-top', '50px');
-		$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
+		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
 		// Set default values
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').removeClass('empty');

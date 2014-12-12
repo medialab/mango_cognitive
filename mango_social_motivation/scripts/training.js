@@ -2,8 +2,8 @@
 
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
-// s, l
-var aKeys               = [115, 108];
+// s, S, l, L
+var aKeys               = [115, 83, 108, 76];
 
 // Sleep duration between steps
 var iWait01             = 500;
@@ -161,11 +161,11 @@ function onKeyPress(event) {
 
 function displayReward(iRewardedLine, iChosenImage, iUserResponse) {
     // Check if the user response is correct
-    // Touche S = 115 = short line
-    // Touche L = 108 = long line
+    // Touche S = 115 or 83 = short line
+    // Touche L = 108 or 76 = long line
     // If response is not correct display nothing
     // Else if response is correct
-    if(((iUserResponse == 115) && (iChosenImage == 0)) || ((iUserResponse == 108) && (iChosenImage == 1))) {
+    if((((iUserResponse == 115) || (iUserResponse == 83)) && (iChosenImage == 0)) || (((iUserResponse == 108) || (iUserResponse == 76)) && (iChosenImage == 1))) {
         var tmp = Math.floor(Math.random() * 101);
         // If correct response is the rewarded line
         if(((iChosenImage == iRewardedLine) && (tmp <= 75)) || ((iChosenImage != iRewardedLine) && (tmp <= 25)))  {

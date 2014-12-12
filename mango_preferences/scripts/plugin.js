@@ -1,7 +1,7 @@
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
-// s, l
-var aKeys		= [115, 108];
+// s, S, l, L
+var aKeys       = [115, 83, 108, 76];
 
 // Images
 var aImagesOdd	= [
@@ -119,9 +119,11 @@ function onKeyPress(e) {
 		// Save answer
 		switch(e.which) {
 			case 115:
+			case 83:
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touch > input[type="text"]').val('s');
 				break;
 			case 108:
+			case 76:
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touch > input[type="text"]').val('l');
 				break;
 		}

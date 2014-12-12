@@ -1,7 +1,7 @@
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
-// s, l
-var aKeys		= [115, 108];
+// s, S, l, L
+var aKeys       = [115, 83, 108, 76];
 
 // Images
 var aImages	= [

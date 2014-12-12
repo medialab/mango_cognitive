@@ -1,7 +1,7 @@
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
-// s, l
-var aKeys			= [115, 108];
+// s, S, l, L
+var aKeys           = [115, 83, 108, 76];
 
 // Sleep duration between steps
 var iWait01			= 500;
@@ -44,6 +44,7 @@ function onKeyPress(e) {
 		// Save answer
 		switch(e.which) {
 			case 115:
+			case 83:
 				oResponse.touch	= 's';
 				// If the user token is odd
 				if(oResponse.token % 2) {
@@ -54,6 +55,7 @@ function onKeyPress(e) {
 				}
 				break;
 			case 108:
+			case 76:
 				oResponse.touch	= 'l';
 				// If the user token is odd
 				if(oResponse.token % 2) {
@@ -182,7 +184,7 @@ function step_02() {
 function step_03() {
 	// Display the fixing cross
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" />');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -195,7 +197,7 @@ function step_04() {
 	oResponse.filename = aImage[0];
 	// Display the fear image
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImage[0] + '" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImage[0] + '" />');
 	// Got to next step
 	iTimeout = setTimeout(function() {step_05()}, iWait03);
 	// Start listening on user interactions
@@ -205,7 +207,7 @@ function step_04() {
 function step_05() {
 	// Display the white mask
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" />');
 	iTimeout = setTimeout(function() {saveAnswer()}, iWait04);
 }
 
@@ -214,7 +216,7 @@ $(document).ready(function() {
 	sLang = $('html').attr('lang');
 	// Display the spinner
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" />');
 	// Display Loading message
 	$('.fear .message').html(sText_10[sLang]).show();
 	// Preload all the images into cache

@@ -1,7 +1,7 @@
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
-// s, l
-var aKeys			= [115, 108];
+// s, S, l, L
+var aKeys           = [115, 83, 108, 76];
 
 // Sleep duration between steps
 var iWait01			= 500;
@@ -46,6 +46,7 @@ function onKeyPress(e) {
 		// Save answer
 		switch(e.which) {
 			case 115:
+			case 83:
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touch > input[type="text"]').val('s');
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touchnumber > input[type="text"]').val('1');
 				// If the user token is odd
@@ -59,6 +60,7 @@ function onKeyPress(e) {
 				}
 				break;
 			case 108:
+			case 76:
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touch > input[type="text"]').val('l');
 				$('.array-multi-flexi-text .question tr.questions-list:eq(' + e.data.step + ') > .answer_cell_00touchnumber > input[type="text"]').val('2');
 				// If the user token is odd
@@ -182,7 +184,7 @@ function step_02(i) {
 function step_03(i) {
 	// Display the fixing cross
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask_fixingcross.png" />');
 	// Generate a random value between 1000 and 1250
 	var iWait = Math.floor(Math.random() * 250 + iWait02);
 	// Got to next step
@@ -192,7 +194,7 @@ function step_03(i) {
 function step_04(i) {
 	// Display the fear image
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImages[i] + '" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + aImages[i] + '" />');
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00filename > input[type="text"]').val(aImages[i]);
 	// Got to next step
 	iTimeout = setTimeout(function() {step_05(i)}, iWait03);
@@ -204,7 +206,7 @@ function step_04(i) {
 function step_05(i) {
 	// Display the white mask
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'mask.png" />');
 	iTimeout = setTimeout(function() {saveAnswer(i)}, iWait04);
 }
 
@@ -219,7 +221,7 @@ $(document).ready(function() {
 	sToken = ($('#token').length > 0) ? $('#token').val() : '0';
 	// Display the spinner
 	$('.lightbox img').remove();
-	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" /></div>');
+	$('.lightbox').append('<img alt="" class="screencentered" src="' + sImagesPath + 'spinner.gif" />');
 	// Display Loading message
 	$('.fear .message').html(sText_10[sLang]).show();
 	// Set default values

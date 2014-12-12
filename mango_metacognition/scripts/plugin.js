@@ -2,6 +2,9 @@
 // left click, right click
 var aKeys						= [1, 3];
 
+// TODO : change image source
+// TODO : add async
+
 // Sleep duration between steps
 var iWait01						= 3000;
 var iWait02						= 250;
@@ -29,7 +32,10 @@ var aRoundImages				= new Array();
 var iNbRound 					= 3;
 var iNbImagesByRound 			= 12;
 var iNbImagesByLevelByRound 	= 2;
-var iTimeout					= 0;
+var iTimeout7					= 0;
+var iTimeout8					= 0;
+var iTimeout9					= 0;
+var iTimeout10					= 0;
 var iSlider						= 0;
 var sImage 						= '';
 var sImagesPath					= 'mango/mango_metacognition/images/';
@@ -75,7 +81,9 @@ function onMouseClick(e) {
 }
 
 function setAnswer(sAnswer, step) {
-	clearTimeout(iTimeout);
+	clearTimeout(iTimeout7);
+	clearTimeout(iTimeout8);
+	clearTimeout(iTimeout9);
 	iStopTimestamp = new Date().getTime();
 	// Check if user answer is correct
 	sNumberOfPointsDispayed = parseInt(sImage.split('_')[2]);
@@ -91,6 +99,7 @@ function setAnswer(sAnswer, step) {
 
 // Got to next step
 function next_round(i) {
+	clearTimeout(iTimeout10);
 	saveSlider(i);
 	if((i + 1) == (iNbRound * iNbImagesByRound)) {
 		exit();
@@ -128,6 +137,7 @@ function preloadImages() {
 	aImages.push(sImagesPath + 'reference/stim_050_' + aReferences[2] + '.BMP');
 	// Add 6 circles paths from easy level and less than 50 (ie. 040)
 	aEasyLess		= getRandomValues(6, 1, 12);
+	console.log(aEasyLess);
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[0] + '.BMP');
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[1] + '.BMP');
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[2] + '.BMP');
@@ -193,6 +203,7 @@ function preloadImages() {
 }
 
 function step_01(i) {
+	console.log("i : " + i);
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Add 2 circles paths from easy level and less than 50 (ie. 040)
@@ -214,10 +225,11 @@ function step_01(i) {
 	aRoundImages.push(sImagesPath + sContext + 'stim_052_' + aHardMore.pop() + '.BMP');
 	aRoundImages.push(sImagesPath + sContext + 'stim_052_' + aHardMore.pop() + '.BMP');
 	// Randomnly sort aRoundImages array
-	aRoundImages.sort(function randOrd(){return (Math.round(Math.random()) - 0.5); });
+	aRoundImages.sort(function() {return Math.round(Math.random() * 2) - 1});
 	// Display the reference disc
 	$('.lightbox .text').html(sMessageReference);
-	$('.lightbox .image').attr('src', sImagesPath + 'reference/stim_050_' + aReferences[(i / iNbImagesByRound)] + '.BMP');
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + sImagesPath + 'reference/stim_050_' + aReferences[(i / iNbImagesByRound)] + '.BMP' + '" />');
 	// Got to next step
 	setTimeout(function() {step_02(i)}, iWait01);
 }
@@ -225,7 +237,8 @@ function step_01(i) {
 function step_02(i) {
 	// Display blank image
 	$('.lightbox .text').html('');
-	$('.lightbox .image').attr('src', aImages[0]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[0] + '" />');
 	// Got to next step
 	setTimeout(function() {step_03(i)}, iWait02);
 }
@@ -240,7 +253,8 @@ function step_03(i) {
 function step_04(i) {
 	// Display blank image
 	$('.lightbox .text').html('');
-	$('.lightbox .image').attr('src', aImages[0]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[0] + '" />');
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Got to next step
@@ -249,7 +263,8 @@ function step_04(i) {
 
 function step_05(i) {
 	// Display the fixing cross
-	$('.lightbox .image').attr('src', aImages[1]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[0] + '" />');
 	// Got to next step
 	setTimeout(function() {step_06(i)}, iWait05);
 }
@@ -257,8 +272,11 @@ function step_05(i) {
 function step_06(i) {
 	iStartTimestamp = new Date().getTime();
 	// Display the image
+	console.log("aRoundImages.length : " + aRoundImages.length);
 	sImage = aRoundImages.pop();
-	$('.lightbox .image').attr('src', sImage);
+	console.log("sImage : " + sImage);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + sImage + '" />');
 	// Set image name as answer
 	$('.array-multi-flexi-text .question tr.questions-list:eq(' + i + ') > .answer_cell_00image > input[type="text"]').val(sImage);
 	// Got to next step
@@ -267,19 +285,20 @@ function step_06(i) {
 
 function step_07(i) {
 	// Display blank image
-	$('.lightbox .image').attr('src', aImages[0]);
+	$('.lightbox .image').remove();
+	$('.lightbox').append('<img alt="" class="image screencentered" src="' + aImages[0] + '" />');
 	// Start listening on user interactions
 	$(document).bind('click', {step: i}, onMouseClick);
 	$(document).bind('contextmenu', {step: i}, onMouseClick);
 	// Got to next step
-	iTimeout = setTimeout(function() {step_08(i)}, iWait07);
+	iTimeout7 = setTimeout(function() {step_08(i)}, iWait07);
 }
 
 function step_08(i) {
 	// Display help message to answer
 	$('.lightbox .question').html(sMessageQuestion);
 	// Got to next step
-	iTimeout = setTimeout(function() {step_09(i)}, iWait08);
+	iTimeout8 = setTimeout(function() {step_09(i)}, iWait08);
 }
 
 function step_09(i) {
@@ -289,12 +308,12 @@ function step_09(i) {
 	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
 	$('.lightbox .question').html('');
 	// Got to next step
-	iTimeout = setTimeout(function() {setAnswer('no_answer', i)}, iWait09);
+	iTimeout9 = setTimeout(function() {setAnswer('no_answer', i)}, iWait09);
 }
 
 function step_10(i) {
 	// Display nothing
-	$('.lightbox img').attr('src', '');
+	$('.lightbox .image').remove();
 	$('.lightbox .question').html('');
 	// Hide all questions
 	$('div[id^="question"]').hide();
@@ -303,17 +322,15 @@ function step_10(i) {
 	// Display the right slider
 	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').css('z-index', '8');
 	// Got to next step
-	iTimeout = setTimeout(function() { next_round(i); }, iWait10);
+	iTimeout10 = setTimeout(function() { next_round(i); }, iWait10);
 	// On click on the slider, go to next step
 	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider').click(
 		function() {
-			clearTimeout(iTimeout);
 			next_round(i);
 		}
 	);
 	$('div[id^=question].numeric-multi:eq(' + i + ') .multinum-slider .ui-slider-handle').click(
 		function() {
-			clearTimeout(iTimeout);
 			next_round(i);
 		}
 	);	
@@ -323,9 +340,8 @@ $(document).ready(
 	function() {
 		// Move lightbox outside of the question
 		$('.lightbox').appendTo('[id^="group-"]');
-		// Display spinner for images loading
+		// Display message for images loading
 		$('.lightbox img').css('padding-top', '50px');
-		$('.lightbox img').attr('src', sImagesPath + 'spinner.gif');
 		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
 		// Set default values into the array
 		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
