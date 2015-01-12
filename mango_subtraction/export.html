@@ -1,0 +1,24 @@
+<script type="text/javascript" src="../../third_party/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(
+	function() {
+		$('.export').click(
+			function() {
+				$.ajax({
+					url: 'services/export_answers.php',
+					success: function(data) {
+						var sResult = jQuery.parseJSON(data);
+						if(sResult.status == 'error') {
+							$('.messages').append('<div class="alert alert-danger">' + sResult.message + '</div>').delay(10000).slideUp(1000);
+						} else {
+							// Download earnings file
+							window.location.href = 'downloads/export_subtraction.csv';
+						}
+					}
+				});
+			}
+		);
+	}
+);
+</script>
+<button class='export'>Export</button>

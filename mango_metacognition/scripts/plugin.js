@@ -1,3 +1,6 @@
+;(function(undefined){
+"use strict";
+
 // Mouse clicks accepted as user interaction
 // left click, right click
 var aKeys						= [1, 3];
@@ -18,15 +21,15 @@ var iWait09						= 400;
 var iWait10						= 5000;
 
 // Levels for experiment
-var aEasyLess					= new Array();
-var aEasyMore					= new Array();
-var aMiddleLess					= new Array();
-var aMiddleMore					= new Array();
-var aHardLess					= new Array();
-var aHardMore					= new Array();
-var aReferences					= new Array();
-var aImages						= new Array();
-var aRoundImages				= new Array();
+var aEasyLess					= [];
+var aEasyMore					= [];
+var aMiddleLess					= [];
+var aMiddleMore					= [];
+var aHardLess					= [];
+var aHardMore					= [];
+var aReferences					= [];
+var aImages						= [];
+var aRoundImages				= [];
 
 // Context
 var iNbRound 					= 3;
@@ -37,7 +40,13 @@ var iTimeout8					= 0;
 var iTimeout9					= 0;
 var iTimeout10					= 0;
 var iSlider						= 0;
+var iStartTimestamp				= 0;
+var iStopTimestamp				= 0;
+var sNumberOfPointsDispayed 	= 0;
 var sImage 						= '';
+var sAnswer 					= '';
+var sImageAnswer				= '';
+var sIsCorrect					= '';
 var sImagesPath					= 'mango/mango_metacognition/images/';
 var sContext					= 'experiment/';
 var sMessageReference			= 'Voici le cercle de référence.';
@@ -47,9 +56,9 @@ var sMessageQuestion			= 'moins ? plus';
 
 function getRandomValues(iNumberOfValues, iMin, iMax, aForbiddenValues) {
 	// Set empty array as default value
-	aForbiddenValues	= aForbiddenValues || new Array();
+	aForbiddenValues	= aForbiddenValues || [];
 	var iTmp			= -1;
-	var aResult			= new Array();
+	var aResult			= [];
 	while(aResult.length < iNumberOfValues) {
 		iTmp = Math.round((iMax - iMin) * Math.random() + iMin);
 		if(($.inArray(iTmp, aResult) && $.inArray(iTmp, aForbiddenValues)) == -1) {
@@ -116,16 +125,11 @@ function saveSlider(step) {
 }
 
 function exit() {
-	// Unbind user interactions
-	$(document).unbind('click');
-	$(document).unbind('contextmenu');
-	$(document).bind('contextmenu', function (e) { e.preventDefault(); });
-	$("#movenextbtn").click();
-	$("#movesubmitbtn").click();
+	$('#movesubmitbtn').click();
 }
 
 // Load all the images needed for this step into the browser cache then launch game
-function preloadImages() {
+function preloadImages(callback) {
 	// Add blank image path
 	aImages.push(sImagesPath + 'blank.bmp');
 	// Add fixing cross image path
@@ -137,7 +141,6 @@ function preloadImages() {
 	aImages.push(sImagesPath + 'reference/stim_050_' + aReferences[2] + '.BMP');
 	// Add 6 circles paths from easy level and less than 50 (ie. 040)
 	aEasyLess		= getRandomValues(6, 1, 12);
-	console.log(aEasyLess);
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[0] + '.BMP');
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[1] + '.BMP');
 	aImages.push(sImagesPath + sContext + 'stim_040_' + aEasyLess[2] + '.BMP');
@@ -185,25 +188,21 @@ function preloadImages() {
 	aImages.push(sImagesPath + sContext + 'stim_052_' + aHardMore[4] + '.BMP');
 	aImages.push(sImagesPath + sContext + 'stim_052_' + aHardMore[5] + '.BMP');
 	// Preload images into cache
-	var length 		= aImages.length - 1;
+	var iImagesLength 	= aImages.length;
+	var iCounter 		= 0;
 	$.each(aImages, function(index) {
-		(function(index) {
-			$.ajax({
-				url: aImages[index],
-			}).done(function() {
-				// If images loading finished, launch the game
-				if(index == length) {
-					$('.lightbox img').css('padding-top', '');
-					// Start training process
-					step_01(0);
-				}
-			});
-		}(index));
+		$.ajax(aImages[index]).done(function() {
+			iCounter++;
+			// If images loading finished, launch the game
+			if(iCounter == iImagesLength) {
+				$('.lightbox img').css('padding-top', '');
+                callback();
+            }
+		});
 	});
 }
 
 function step_01(i) {
-	console.log("i : " + i);
 	// Hide all questions
 	$('div[id^="question"]').hide();
 	// Add 2 circles paths from easy level and less than 50 (ie. 040)
@@ -272,9 +271,7 @@ function step_05(i) {
 function step_06(i) {
 	iStartTimestamp = new Date().getTime();
 	// Display the image
-	console.log("aRoundImages.length : " + aRoundImages.length);
 	sImage = aRoundImages.pop();
-	console.log("sImage : " + sImage);
 	$('.lightbox .image').remove();
 	$('.lightbox').append('<img alt="" class="image screencentered" src="' + sImage + '" />');
 	// Set image name as answer
@@ -338,31 +335,48 @@ function step_10(i) {
 
 $(document).ready(
 	function() {
-		// Move lightbox outside of the question
-		$('.lightbox').appendTo('[id^="group-"]');
-		// Display message for images loading
-		$('.lightbox img').css('padding-top', '50px');
-		$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
-		// Set default values into the array
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').removeClass('empty');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00answer > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00answer > input[type="text"]').removeClass('empty');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00image > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00image > input[type="text"]').removeClass('empty');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').removeClass('empty');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00selftrust > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00selftrust > input[type="text"]').removeClass('empty');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').val('-1');
-		$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').removeClass('empty');
-		// CSS for the sliders
-		$('div[id^=question].numeric-multi .multinum-slider').css('color', 'white');
-		$('div[id^=question].numeric-multi .slider-callout').css('color', 'white');
-		$('div[id^=question].numeric-multi .multinum-slider').addClass('screencentered');
-		// Disable context menu
-		$(document).bind('contextmenu', function (e) { e.preventDefault(); });
-		// Preload images and launch game
-		preloadImages();
+		async.series({
+			// Init DOM
+			one: function(callback) {
+				// Move lightbox outside of the question
+				$('.lightbox').appendTo('[id^="group-"]');
+				// Display message for images loading
+				$('.lightbox img').css('padding-top', '50px');
+				$('.lightbox .text').html('<br/><br/>Chargement des images du jeu. Veuillez patienter.');
+				// Set default values into the array
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayanswer > input[type="text"]').removeClass('empty');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00answer > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00answer > input[type="text"]').removeClass('empty');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00image > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00image > input[type="text"]').removeClass('empty');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00correct > input[type="text"]').removeClass('empty');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00selftrust > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00selftrust > input[type="text"]').removeClass('empty');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').val('-1');
+				$('.array-multi-flexi-text .question tr.questions-list > .answer_cell_00delayselftrust > input[type="text"]').removeClass('empty');
+				// CSS for the sliders
+				$('div[id^=question].numeric-multi .multinum-slider').css('color', 'white');
+				$('div[id^=question].numeric-multi .slider-callout').css('color', 'white');
+				$('div[id^=question].numeric-multi .multinum-slider').addClass('screencentered');
+				// Disable context menu
+				$(document).bind('contextmenu', function (e) { e.preventDefault(); });
+				callback();
+			},
+			// Preload images
+			two: function(callback) {
+				preloadImages(callback);
+			},
+			// Launch game
+			three: function(callback) {
+				step_01(0);
+			}
+		},
+		function(err, results) {
+			console.log(results);
+		});
 	}
 );
+
+})()

@@ -1,3 +1,6 @@
+;(function(undefined){
+"use strict";
+
 /*** VARIABLES ***/
 
 // Key accepted as user interaction
@@ -35,8 +38,12 @@ var iRewardedScore     = -1;
 var bIsRewarded        = 0;
 var sVideoDisplayed    = '';
 var bIsCorrect         = 0;
+var iStartTimestamp    = 0;
+var iTimeout           = 0;
+var iVideoIndex        = 0;
 var iDelayAnswer       = -1;
 var aAnswers           = [];
+var aVideosTmp         = [];
 
 // List of image
 var CIRCLE_IMAGE        = 'circle.bmp';
@@ -326,3 +333,5 @@ $(document).ready(
         });
     }
 );
+
+})()

@@ -1,3 +1,6 @@
+;(function(undefined){
+"use strict";
+
 /*** VARIABLES ***/
 
 // Key accepted as user interaction
@@ -15,6 +18,12 @@ var iWait05             = 1750;
 // Experiment configuration
 var iNumberOfIteration  = 6;
 var i                   = 0;
+var iRewardedLine       = 0;
+var iChosenImage        = 0;
+var iUserResponse       = 0;
+var iTimeout            = 0;
+var sVideoName          = '';
+var sText               = '';
 
 // Set path to fear images
 var sPluginPath         = 'mango/mango_social_motivation/';
@@ -24,6 +33,7 @@ var sImagesPath         = sPluginPath + 'images/';
 var CIRCLE_IMAGE        = 'circle.bmp';
 var SHORT_LINE_IMAGE    = 'short.bmp';
 var LONG_LINE_IMAGE     = 'long.bmp';
+var sImageName          = '';
 var aImages             = new Array(CIRCLE_IMAGE, SHORT_LINE_IMAGE, LONG_LINE_IMAGE);
 var aVideos             = new Array(
     'AFN3_approval', 
@@ -252,3 +262,5 @@ $(document).ready(
         });
     }
 );
+
+})()

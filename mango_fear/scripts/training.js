@@ -1,3 +1,6 @@
+;(function(undefined){
+"use strict";
+
 // Key accepted as user interaction
 // http://expandinghead.net/keycode.html
 // s, S, l, L
@@ -234,3 +237,5 @@ $(document).ready(function() {
 		}(index));
 	});
 });
+
+})()

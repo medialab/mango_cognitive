@@ -1,3 +1,6 @@
+;(function(undefined){
+"use strict";
+
 // Mouse clicks accepted as user interaction
 // left click, right click
 var aKeys				= [1, 3];
@@ -15,22 +18,25 @@ var iWait09				= 400;
 var iWait10				= 5000;
 
 // Levels for training
-var aEasy				= new Array(40, 60);
-var aMiddle				= new Array(44, 56);
-var aHard				= new Array(48, 52);
+var aEasy				= [40, 60];
+var aMiddle				= [44, 56];
+var aHard				= [48, 52];
 
 // Context
 var iImageIterator		= 0;
 var iMaxIteration		= 3;
 var iTimeout			= 0;
+var iStartTimestamp		= 0;
+var iStopTimestamp		= 0;
 var sImage 				= '';
+var sAnswer 			= '';
 var sImagesPath			= 'mango/mango_metacognition/images/';
 var sContext			= 'training/';
 var sMessageReference	= 'Voici le cercle de référence.';
 var sMessageStart		= 'Attention c\'est parti !';
 var sMessageQuestion	= 'moins ? plus';
 var sMessageKeys		= '<div class="key">Moins = Clic gauche</div><div class="key">Plus = Clic droit</div>';
-var aImages				= new Array();
+var aImages				= [];
 
 
 // Load all the images needed for this step into the browser cache then launch game
@@ -68,7 +74,7 @@ function preloadImages() {
 
 function getRandomValues(iNumberOfValues, iMin, iMax) {
 	var iTmp	= -1;
-	var aResult	= new Array();
+	var aResult	= [];
 	while(aResult.length < iNumberOfValues) {
 		iTmp = Math.round((iMax - iMin) * Math.random() + iMin);
 		if($.inArray(iTmp, aResult) == -1) {
@@ -266,3 +272,5 @@ $(document).ready(
 		preloadImages();
 	}
 );
+
+})()
