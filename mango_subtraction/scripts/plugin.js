@@ -207,7 +207,7 @@ $(document).ready(
 	function() {
 		sToken = $('.token').text();
 		saveAction('start', 0);
-		$('video').css('margin-top', '180px')
+		// $('video').css('margin-top', '180px');
 		cycle();
 		// Create all the user interactions for this game
 		initInteractions();
