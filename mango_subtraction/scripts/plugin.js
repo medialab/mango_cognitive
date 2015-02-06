@@ -13,7 +13,8 @@ var iDigit01 		= 0;
 var iDigit02		= 0;
 var iAnswer 		= 0;
 var sToken			= '';
-
+var nbAnswers           = 0;
+var nbCorrectAnswers    = 0;
 
 /* *
  * @param iNumberOfValues int Number of values to be randomly generated
@@ -138,6 +139,10 @@ function initInteractions() {
 			var sUserAnswer = $(this).val();
 			var iDelay = new Date().getTime() - iStartTimestamp;
 			var bIsCorrect = (sUserAnswer == iAnswer) ? 1 : 0;
+
+			nbAnswers++;
+			if (bIsCorrect)
+				nbCorrectAnswers++;
 			// If user answer is incorrect
 			if(!bIsCorrect) {
 				$('.subtraction .incorrectmessage').css('visibility', 'visible');
@@ -181,7 +186,19 @@ function displayTransitionMessage() {
 	// Pause video
 	$('video')[0].pause();
 	saveAction('end', 0);
-	goout();
+
+	// Before going out, we display a kind message if needed
+	if (!nbAnswers) {
+		return goout();
+	}
+
+	$('.endmessage')
+		.text('Bravo! Tu as fait ' + nbAnswers + ' opérations et tu en as réussi ' + nbCorrectAnswers + '.')
+		.css('color', 'green');
+
+	setTimeout(function() {
+		goout();
+	}, 2000);
 }
 
 function cycle() {
