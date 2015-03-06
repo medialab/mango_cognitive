@@ -224,6 +224,28 @@ $(document).ready(
 	function() {
 		sToken = $('.token').text();
 		saveAction('start', 0);
+
+		// Dirty css adjustments for the love of god.
+		$('.transitionmessage').next('div').css({
+			position: 'absolute',
+			width: '100%',
+			top: '400px'
+		});
+
+		$('.button-video').parent().next('select').css({
+			position: 'absolute',
+			right: '106px',
+			top: '420px'
+		});
+
+		$('video').css({
+			top: '201px',
+			positon: 'absolute'
+		});
+
+		// $('input[type=radio]').css('font-size', '60pt');
+		// $('label, .row').css('font-size', '30px');
+
 		// $('video').css('margin-top', '180px');
 		cycle();
 		// Create all the user interactions for this game
