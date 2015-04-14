@@ -3,7 +3,8 @@
 
 var iMin			= -8;
 var iMax			= 8;
-var time 			= 4 * 60 * 1000;
+// 3 minutes
+var time 			= 3 * 60 * 1000;
 var messageTime		= time - 10 * 1000;
 var iTransitionTime	= 10 * 1000;
 var sImagesPath		= 'mango/mango_subtraction/images/';
