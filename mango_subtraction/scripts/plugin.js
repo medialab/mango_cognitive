@@ -142,10 +142,13 @@ function initInteractions() {
 			var bIsCorrect = (sUserAnswer == iAnswer) ? 1 : 0;
 
 			nbAnswers++;
-			if (bIsCorrect)
+			addAnswer();
+
+			// If user answer is correct
+			if (bIsCorrect) {
 				nbCorrectAnswers++;
-			// If user answer is incorrect
-			if(!bIsCorrect) {
+				addCorrectAnswer();
+			} else {
 				$('.subtraction .incorrectmessage').css('visibility', 'visible');
 				iNextDelay = 1 * 1000;
 				// Disable radio button
@@ -192,10 +195,6 @@ function displayTransitionMessage() {
 	if (!nbAnswers) {
 		return goout();
 	}
-
-	$('.endmessage')
-		.text('Bravo! Tu as fait ' + nbAnswers + ' opérations et tu en as réussi ' + nbCorrectAnswers + '.')
-		.css('color', 'green');
 
 	setTimeout(function() {
 		goout();
@@ -244,10 +243,6 @@ $(document).ready(
 			positon: 'absolute'
 		});
 
-		// $('input[type=radio]').css('font-size', '60pt');
-		// $('label, .row').css('font-size', '30px');
-
-		// $('video').css('margin-top', '180px');
 		cycle();
 		// Create all the user interactions for this game
 		initInteractions();
