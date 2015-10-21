@@ -12,7 +12,7 @@ $(document).ready(
 							$('.messages').append('<div class="alert alert-danger">' + sResult.message + '</div>').delay(10000).slideUp(1000);
 						} else {
 							// Download earnings file
-							window.location.href = 'downloads/export_subtraction.csv';
+							window.location.href = 'downloads/export_subtraction.csv?' + Date.now();
 						}
 					}
 				});
@@ -22,3 +22,4 @@ $(document).ready(
 );
 </script>
 <button class='export'>Export</button>
+<div class='messages'>Merci de cliquer sur le bouton ci-dessus.</div>
